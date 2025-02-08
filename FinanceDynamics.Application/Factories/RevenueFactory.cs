@@ -1,0 +1,32 @@
+﻿using FinanceDynamics.Application.Interfaces;
+using FinanceDynamics.Domain.Entities;
+using FinanceDynamics.Domain.Enums;
+using FinanceDynamics.Domain.ValueObjects;
+
+namespace FinanceDynamics.Application.Factories
+{
+    public class RevenueFactory : IRevenueFactory
+    {
+        public Revenue Create(User user, TransactionCategory category, TransactionalMethod transactionalMethod, 
+            Currency currency, List<Installment> installments, TransactionFile? attachedFile, 
+            TransactionStatus transactionStatus, decimal amount, string? description, 
+            bool recurring, DateTime date, DateTime? dateOfReceipt, bool? receivedLate)
+        {
+            return new Revenue(
+                user, 
+                category,
+                transactionalMethod,
+                currency,
+                installments,
+                attachedFile,
+                transactionStatus,
+                amount,
+                description,
+                recurring,
+                date,
+                dateOfReceipt,
+                receivedLate
+            );
+        }
+    }
+}

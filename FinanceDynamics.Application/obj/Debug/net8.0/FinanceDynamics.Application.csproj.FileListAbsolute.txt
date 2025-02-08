@@ -1,0 +1,32 @@
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\bin\Debug\net8.0\FinanceDynamics.Application.deps.json
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\bin\Debug\net8.0\FinanceDynamics.Application.dll
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\bin\Debug\net8.0\FinanceDynamics.Application.pdb
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.AssemblyInfoInputs.cache
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.AssemblyInfo.cs
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.sourcelink.json
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.dll
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\refint\FinanceDynamics.Application.dll
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.pdb
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\ref\FinanceDynamics.Application.dll
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\bin\Debug\net8.0\FinanceDynamics.Domain.dll
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\bin\Debug\net8.0\FinanceDynamics.Domain.pdb
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.csproj.AssemblyReference.cache
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceD.6C769986.Up2Date
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\bin\Debug\net8.0\FinanceDynamics.Application.deps.json
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\bin\Debug\net8.0\FinanceDynamics.Application.dll
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\bin\Debug\net8.0\FinanceDynamics.Application.pdb
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\bin\Debug\net8.0\FinanceDynamics.Domain.dll
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\bin\Debug\net8.0\FinanceDynamics.Domain.pdb
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.csproj.AssemblyReference.cache
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.AssemblyInfoInputs.cache
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.AssemblyInfo.cs
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.sourcelink.json
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceD.6C769986.Up2Date
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.dll
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\refint\FinanceDynamics.Application.dll
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.pdb
+C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Application\obj\Debug\net8.0\ref\FinanceDynamics.Application.dll
