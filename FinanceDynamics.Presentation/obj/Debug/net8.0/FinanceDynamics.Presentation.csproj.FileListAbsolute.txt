@@ -110,7 +110,6 @@ C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynami
 C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Presentation\obj\Debug\net8.0\FinanceDynamics.Presentation.pdb
 C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Presentation\obj\Debug\net8.0\FinanceDynamics.Presentation.genruntimeconfig.cache
 C:\Desenvolvimento\FinanceDynamics - 02 02 2025 V2\FinanceDynamics\FinanceDynamics.Presentation\obj\Debug\net8.0\ref\FinanceDynamics.Presentation.dll
-C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Presentation\bin\Debug\net8.0\Database\database.sql
 C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Presentation\bin\Debug\net8.0\Microsoft.Data.Sqlite.dll
 C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Presentation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Presentation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -146,3 +145,4 @@ C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Presentation\
 C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Presentation\bin\Debug\net8.0\FinanceDynamics.Infrastructure.dll
 C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Presentation\bin\Debug\net8.0\FinanceDynamics.Infrastructure.pdb
 C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Presentation\bin\Debug\net8.0\appsettings.json
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Presentation\bin\Debug\net8.0\Database\database.txt

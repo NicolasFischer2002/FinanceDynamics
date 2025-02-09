@@ -1,0 +1,231 @@
+﻿-- Database creation flow:
+
+-- The database schema was created from the Domain classes, designed entirely in 
+-- diagrams - via draw.io - before its creation.
+
+-- The SQLite database was created via scripts. The system checks whether the 
+-- database exists, and if it does not, it creates it.
+
+-- The creation is done by reading this file that contains the database creation scripts.
+
+-- Then, it is necessary to run the EF CORE command to create the Context and the Models.
+
+-- Entity Framework Core Scaffold to generate the corresponding classes 
+-- (Database-First Approach). This will automatically create the entities 
+-- and DbContext based on the database tables.
+
+-- The database is configured to exit along with the .exe.
+-- The command must be executed within the Infrastructure project Terminal.
+-- dotnet ef dbcontext scaffold "Data Source=C:\\Full Database Path\\FinanceDynamics.db" Microsoft.EntityFrameworkCore.Sqlite -o Models --context FinanceDbContext --context-dir Context --no-onconfiguring
+
+-- To recreate the database and classes generated via EF, you need to delete the 
+-- database file - FinanceDynamics.db - delete the Models folder, delete the Context folder, 
+-- comment out the "services.AddDbContext<FinanceDbContext>" section in program.cs, run the 
+-- program to generate the database again, and then run the "scaffold" command.
+
+-- Database creation scripts --
+
+-- By default, referential integrity checks (foreign keys) are 
+-- disabled in SQLite. To enable them, it is recommended to execute 
+-- the following command immediately after opening the connection 
+-- to the database:
+-- PRAGMA foreign_keys = ON;
+-- This ensures that the integrity rules defined by the foreign keys 
+-- are enforced during insert, update, and delete operations.
+
+-- File converted to .txt instead of .sql because Visual Studio cannot natively interpret 
+-- the SQLite syntax and reports an error.
+
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE TypesOfPeople (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Description TEXT NOT NULL
+);
+
+CREATE TABLE Person (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Guid TEXT NOT NULL,
+    Name TEXT NOT NULL,
+    TypeOfPersonId INTEGER NOT NULL,
+    FOREIGN KEY (TypeOfPersonId) REFERENCES TypesOfPeople(Id)
+);
+
+CREATE TABLE Currencies (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Guid TEXT NOT NULL,
+    Name TEXT NOT NULL,
+    Description TEXT,  -- Campo opcional (nullable)
+    Code TEXT NOT NULL,
+    ExchangeRateToUSD REAL NOT NULL
+);
+
+CREATE TABLE User (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    PersonId INTEGER NOT NULL,
+    Email TEXT NOT NULL,
+    Telephone TEXT NOT NULL,
+    Password TEXT NOT NULL,
+    DateCreated DATETIME NOT NULL,
+    StandardCurrencyId INTEGER NOT NULL,
+    FOREIGN KEY (PersonId) REFERENCES Person(Id),
+    FOREIGN KEY (StandardCurrencyId) REFERENCES Currencies(Id)
+);
+
+CREATE TABLE InvestmentTypes (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Description TEXT NOT NULL
+);
+
+CREATE TABLE Investments (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Guid TEXT NOT NULL,
+    PersonId INTEGER NOT NULL,
+    Value REAL NOT NULL,
+    TransactionFee REAL NOT NULL,
+    Description TEXT,  -- opcional, pode ser nulo
+    Date DATETIME NOT NULL,
+    InvestmentTypeId INTEGER NOT NULL,
+    FOREIGN KEY (PersonId) REFERENCES Person(Id),
+    FOREIGN KEY (InvestmentTypeId) REFERENCES InvestmentTypes(Id)
+);
+
+CREATE TABLE FinancialInstitutions (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name TEXT NOT NULL,
+    Description TEXT, -- opcional, pode ser nulo
+    Code TEXT -- opcional, pode ser nulo
+);
+
+CREATE TABLE FixedIncomeFinancialInstitutions (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    FinancialInstitutionId INTEGER NOT NULL,
+    FOREIGN KEY (FinancialInstitutionId) REFERENCES FinancialInstitutions(Id)
+);
+
+CREATE TABLE VariableIncomeFinancialInstitutions (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    FinancialInstitutionId INTEGER NOT NULL,
+    FOREIGN KEY (FinancialInstitutionId) REFERENCES FinancialInstitutions(Id)
+);
+
+CREATE TABLE FixedIncome (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    InvestmentId INTEGER NOT NULL,
+    FixedIncomeFinancialInstitutionsId INTEGER NOT NULL,
+    FOREIGN KEY (InvestmentId) REFERENCES Investments(Id),
+    FOREIGN KEY (FixedIncomeFinancialInstitutionsId) REFERENCES FixedIncomeFinancialInstitutions(Id)
+);
+
+CREATE TABLE CDB (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    FixedIncomeId INTEGER NOT NULL,
+    ImmediateWithdrawal INTEGER NOT NULL,
+    InvestmentDuration INTEGER NOT NULL,
+    FOREIGN KEY (FixedIncomeId) REFERENCES FixedIncome(Id)
+);
+
+CREATE TABLE VariableIncome (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    InvestmentId INTEGER NOT NULL,
+    VariableIncomeFinancialInstitutionId INTEGER NOT NULL,
+    FOREIGN KEY (InvestmentId) REFERENCES Investments(Id),
+    FOREIGN KEY (VariableIncomeFinancialInstitutionId) REFERENCES VariableIncomeFinancialInstitutions(Id)
+);
+
+CREATE TABLE Shares (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    VariableIncomeId INTEGER NOT NULL,
+    Quantity INTEGER NOT NULL,
+    PricePerUnit REAL NOT NULL,
+    Symbol TEXT NOT NULL,
+    Company TEXT NOT NULL,
+    FOREIGN KEY (VariableIncomeId) REFERENCES VariableIncome(Id)
+);
+
+CREATE TABLE TransactionTypes (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Description TEXT NOT NULL
+);
+
+CREATE TABLE Categories (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Guid TEXT NOT NULL,
+    Name TEXT NOT NULL,
+    Description TEXT -- opcional, pode ser nulo
+);
+
+CREATE TABLE TransactionCategories (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    CategoryId INTEGER NOT NULL,
+    FOREIGN KEY (CategoryId) REFERENCES Categories(Id)
+);
+
+CREATE TABLE SubcategoriesTransaction (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    TransactionCategoryId INTEGER NOT NULL,
+    Name TEXT NOT NULL,
+    Description TEXT, -- opcional, pode ser nulo
+    FOREIGN KEY (TransactionCategoryId) REFERENCES TransactionCategories(Id)
+);
+
+CREATE TABLE TransactionalMethods (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Guid TEXT NOT NULL,
+    Name TEXT NOT NULL,
+    Description TEXT -- opcional, pode ser nulo
+);
+
+CREATE TABLE TransactionStatus (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Description TEXT NOT NULL
+);
+
+CREATE TABLE Transactions (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Guid TEXT NOT NULL,
+    UserId INTEGER NOT NULL,
+    TransactionCategoryId INTEGER NOT NULL,
+    TransactionalMethodId INTEGER NOT NULL,
+    CurrencyId INTEGER NOT NULL,
+    TransactionStatusId INTEGER NOT NULL,
+    TransactionTypeId INTEGER NOT NULL,
+    Amount REAL NOT NULL,
+    Description TEXT, -- opcional, pode ser nulo
+    Recurring INTEGER NOT NULL,
+    Date DATETIME NOT NULL,
+    FOREIGN KEY (UserId) REFERENCES User(Id),
+    FOREIGN KEY (TransactionCategoryId) REFERENCES TransactionCategories(Id),
+    FOREIGN KEY (TransactionalMethodId) REFERENCES TransactionalMethods(Id),
+    FOREIGN KEY (CurrencyId) REFERENCES Currencies(Id),
+    FOREIGN KEY (TransactionStatusId) REFERENCES TransactionStatus(Id),
+    FOREIGN KEY (TransactionTypeId) REFERENCES TransactionTypes(Id)
+);
+
+CREATE TABLE TransactionFiles (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Guid TEXT NOT NULL,
+    TransactionId INTEGER NOT NULL,
+    Name TEXT NOT NULL,
+    Description TEXT, -- opcional, pode ser nulo
+    File BLOB NOT NULL, -- para armazenar o arquivo
+    Date DATETIME NOT NULL,
+    FOREIGN KEY (TransactionId) REFERENCES Transactions(Id)
+);
+
+CREATE TABLE Revenue (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    TransactionId INTEGER NOT NULL,
+    DateOfReceipt DATETIME, -- opcional, pode ser nulo
+    ReceivedLate INTEGER, -- opcional, pode ser nulo
+    FOREIGN KEY (TransactionId) REFERENCES Transactions(Id)
+);
+
+CREATE TABLE Expense (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    TransactionId INTEGER NOT NULL,
+    DueDate DATETIME NOT NULL,
+    PaymentDate DATETIME, -- opcional, pode ser nulo
+    PaidLate INTEGER, -- opcional, pode ser nulo
+    FOREIGN KEY (TransactionId) REFERENCES Transactions(Id)
+);

@@ -16,3 +16,7 @@ C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Infrastructur
 C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Infrastructure\bin\Release\net8.0\FinanceDynamics.Domain.pdb
 C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Infrastructure\obj\Release\net8.0\FinanceDynamics.Infrastructure.csproj.AssemblyReference.cache
 C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Infrastructure\obj\Release\net8.0\FinanceD.A73D9FEC.Up2Date
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Infrastructure\bin\Release\net8.0\appsettings.json
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Infrastructure\bin\Release\net8.0\Database\database.txt
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Infrastructure\bin\Release\net8.0\FinanceDynamics.Infrastructure.runtimeconfig.json
+C:\Desenvolvimento\FinanceDynamics\FinanceDynamics\FinanceDynamics.Infrastructure\obj\Release\net8.0\FinanceDynamics.Infrastructure.genruntimeconfig.cache

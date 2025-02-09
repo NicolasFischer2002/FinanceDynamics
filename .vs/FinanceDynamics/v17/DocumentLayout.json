@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{754DCD76-9B55-4690-B703-76548A56315A}|FinanceDynamics.Infrastructure\\FinanceDynamics.Infrastructure.csproj|c:\\desenvolvimento\\financedynamics\\financedynamics\\financedynamics.infrastructure\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{754DCD76-9B55-4690-B703-76548A56315A}|FinanceDynamics.Infrastructure\\FinanceDynamics.Infrastructure.csproj|solutionrelative:financedynamics.infrastructure\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{754DCD76-9B55-4690-B703-76548A56315A}|FinanceDynamics.Infrastructure\\FinanceDynamics.Infrastructure.csproj|c:\\desenvolvimento\\financedynamics\\financedynamics\\financedynamics.infrastructure\\database\\database.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
-      "RelativeMoniker": "D:0:0:{754DCD76-9B55-4690-B703-76548A56315A}|FinanceDynamics.Infrastructure\\FinanceDynamics.Infrastructure.csproj|solutionrelative:financedynamics.infrastructure\\database\\database.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+      "AbsoluteMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\financedynamics\\financedynamics.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:financedynamics.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\financedynamics\\financedynamics.presentation\\gui\\startapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:financedynamics.presentation\\gui\\startapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\financedynamics\\financedynamics.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:financedynamics.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{754DCD76-9B55-4690-B703-76548A56315A}|FinanceDynamics.Infrastructure\\FinanceDynamics.Infrastructure.csproj|c:\\desenvolvimento\\financedynamics\\financedynamics\\financedynamics.infrastructure\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{754DCD76-9B55-4690-B703-76548A56315A}|FinanceDynamics.Infrastructure\\FinanceDynamics.Infrastructure.csproj|solutionrelative:financedynamics.infrastructure\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{754DCD76-9B55-4690-B703-76548A56315A}|FinanceDynamics.Infrastructure\\FinanceDynamics.Infrastructure.csproj|c:\\desenvolvimento\\financedynamics\\financedynamics\\financedynamics.infrastructure\\database\\database.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{754DCD76-9B55-4690-B703-76548A56315A}|FinanceDynamics.Infrastructure\\FinanceDynamics.Infrastructure.csproj|solutionrelative:financedynamics.infrastructure\\database\\database.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,24 +26,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Presentation\\Program.cs",
               "RelativeDocumentMoniker": "FinanceDynamics.Presentation\\Program.cs",
               "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Presentation\\Program.cs",
               "RelativeToolTip": "FinanceDynamics.Presentation\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-18T13:14:45.644Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "StartApp.cs",
               "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Presentation\\GUI\\StartApp.cs",
               "RelativeDocumentMoniker": "FinanceDynamics.Presentation\\GUI\\StartApp.cs",
@@ -56,19 +57,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "database.sql",
-              "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Infrastructure\\Database\\database.sql",
-              "RelativeDocumentMoniker": "FinanceDynamics.Infrastructure\\Database\\database.sql",
-              "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Infrastructure\\Database\\database.sql",
-              "RelativeToolTip": "FinanceDynamics.Infrastructure\\Database\\database.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-02-08T17:44:22.881Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Infrastructure\\appsettings.json",
               "RelativeDocumentMoniker": "FinanceDynamics.Infrastructure\\appsettings.json",
@@ -76,9 +65,21 @@
               "RelativeToolTip": "FinanceDynamics.Infrastructure\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-08T18:51:57.785Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-09T13:31:25.406Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "database.txt",
+              "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Infrastructure\\Database\\database.txt",
+              "RelativeDocumentMoniker": "FinanceDynamics.Infrastructure\\Database\\database.txt",
+              "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Infrastructure\\Database\\database.txt",
+              "RelativeToolTip": "FinanceDynamics.Infrastructure\\Database\\database.txt",
+              "ViewState": "AgIAAOYAAAAAAAAAAAAAABEAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-02-09T13:33:57.841Z",
+              "IsPinned": true
             }
           ]
         }
