@@ -100,4 +100,6 @@ static IHostBuilder CreateHostBuilder(string[] args) =>
             // GUI
             services.AddTransient<IStartApp, StartApp>();
             services.AddTransient<IGraphicalUserInterface, GraphicalUserInterface>();
+            services.AddTransient<IStart, Start>();
+            services.AddTransient<ITextGraphicalUserInterface, TextGraphicalUserInterface>();
         });
