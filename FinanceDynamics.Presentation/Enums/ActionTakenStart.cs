@@ -3,7 +3,6 @@
     internal enum ActionTakenStart
     {
         LoginSuccessful,
-        LoginFailed, 
         CloseApplication
     }
 }

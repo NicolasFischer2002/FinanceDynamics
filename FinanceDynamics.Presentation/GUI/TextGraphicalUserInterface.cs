@@ -59,5 +59,30 @@ namespace FinanceDynamics.Presentation.GUI
                 }
             }
         }
+
+        public string? FillInFormField(string message, bool nullableField)
+        {
+            string? input;
+
+            while (true)
+            {
+                Console.WriteLine(message);
+                Console.Write("➤ ");
+                input = Console.ReadLine();
+
+                // If the field is not nullable and the user does not fill it in.
+                if (!nullableField && string.IsNullOrWhiteSpace(input))
+                {
+                    Console.WriteLine("❌ Este campo é obrigatório! Por favor, preencha corretamente.");
+                    continue; // Repeat the loop until the field is filled correctly.
+                }
+
+                // If the field is valid (not mandatory or filled in correctly).
+                break;
+            }
+
+            return input;
+        }
+
     }
 }

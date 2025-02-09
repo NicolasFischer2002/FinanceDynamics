@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:financedynamics.presentation\\gui\\textgraphicaluserinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\financedynamics\\financedynamics.presentation\\interfaces\\itextgraphicaluserinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:financedynamics.presentation\\interfaces\\itextgraphicaluserinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\financedynamics\\financedynamics.presentation\\gui\\start.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:financedynamics.presentation\\gui\\start.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\financedynamics\\financedynamics.presentation\\interfaces\\istart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:financedynamics.presentation\\interfaces\\istart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\financedynamics\\financedynamics.presentation\\enums\\actiontakenstart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:financedynamics.presentation\\enums\\actiontakenstart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\financedynamics\\financedynamics.presentation\\gui\\startapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:financedynamics.presentation\\gui\\startapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\financedynamics\\financedynamics.presentation\\enums\\actiontakenstart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:financedynamics.presentation\\enums\\actiontakenstart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D786EFA0-8CAC-4056-9E53-970FE0328626}|FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\financedynamics\\financedynamics.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,18 +47,17 @@
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-18T13:14:45.644Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "StartApp.cs",
               "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Presentation\\GUI\\StartApp.cs",
               "RelativeDocumentMoniker": "FinanceDynamics.Presentation\\GUI\\StartApp.cs",
               "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Presentation\\GUI\\StartApp.cs",
               "RelativeToolTip": "FinanceDynamics.Presentation\\GUI\\StartApp.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBUAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBUAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-19T11:56:28.004Z",
               "IsPinned": true,
@@ -67,26 +66,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IStart.cs",
-              "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Presentation\\Interfaces\\IStart.cs",
-              "RelativeDocumentMoniker": "FinanceDynamics.Presentation\\Interfaces\\IStart.cs",
-              "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Presentation\\Interfaces\\IStart.cs",
-              "RelativeToolTip": "FinanceDynamics.Presentation\\Interfaces\\IStart.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T17:59:55.87Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Start.cs",
               "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Presentation\\GUI\\Start.cs",
               "RelativeDocumentMoniker": "FinanceDynamics.Presentation\\GUI\\Start.cs",
               "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Presentation\\GUI\\Start.cs",
               "RelativeToolTip": "FinanceDynamics.Presentation\\GUI\\Start.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBQAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAowC8AAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-09T18:14:25.361Z",
               "IsPinned": true,
@@ -94,15 +79,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "ActionTakenStart.cs",
               "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Presentation\\Enums\\ActionTakenStart.cs",
               "RelativeDocumentMoniker": "FinanceDynamics.Presentation\\Enums\\ActionTakenStart.cs",
               "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Presentation\\Enums\\ActionTakenStart.cs",
               "RelativeToolTip": "FinanceDynamics.Presentation\\Enums\\ActionTakenStart.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-09T18:11:33.738Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ITextGraphicalUserInterface.cs",
+              "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Presentation\\Interfaces\\ITextGraphicalUserInterface.cs",
+              "RelativeDocumentMoniker": "FinanceDynamics.Presentation\\Interfaces\\ITextGraphicalUserInterface.cs",
+              "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Presentation\\Interfaces\\ITextGraphicalUserInterface.cs",
+              "RelativeToolTip": "FinanceDynamics.Presentation\\Interfaces\\ITextGraphicalUserInterface.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T22:02:53.678Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -114,9 +113,10 @@
               "RelativeDocumentMoniker": "FinanceDynamics.Presentation\\GUI\\TextGraphicalUserInterface.cs",
               "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\FinanceDynamics\\FinanceDynamics.Presentation\\GUI\\TextGraphicalUserInterface.cs",
               "RelativeToolTip": "FinanceDynamics.Presentation\\GUI\\TextGraphicalUserInterface.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAuwD4AAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-09T19:46:50.405Z",
+              "IsPinned": true,
               "EditorCaption": ""
             }
           ]

@@ -5,7 +5,7 @@ namespace FinanceDynamics.Presentation.Interfaces
     internal interface IStart
     {
         ActionTakenStart StartApplication();
-        bool Login();
-        bool CreateAccount();
+        ActionTakenStart Login();
+        ActionTakenStart CreateAccount();
     }
 }

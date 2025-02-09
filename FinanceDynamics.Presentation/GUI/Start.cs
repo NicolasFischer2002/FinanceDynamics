@@ -17,24 +17,40 @@ namespace FinanceDynamics.Presentation.GUI
 
         ActionTakenStart IStart.StartApplication()
         {
-            int choice  = _textGraphicalUserInterface
+            bool _continue = true;
+
+            do
+            {
+                int choice = _textGraphicalUserInterface
                 .CreateMenu("Início", ["Login", "Criar conta", "Encerrar aplicação"]);
 
-            return choice switch
-            {
-                1 => ActionTakenStart.LoginSuccessful,
-                2 => ActionTakenStart.LoginFailed,
-                3 => ActionTakenStart.CloseApplication,
-                _ => ActionTakenStart.CloseApplication
-            };
+                switch (choice)
+                {
+                    case 1:
+                        return Login();
+
+                    case 2:
+                        return CreateAccount();
+
+                    case 3:
+                        return ActionTakenStart.CloseApplication;
+
+                    default:
+                        return ActionTakenStart.CloseApplication;
+                }
+
+            } while (_continue);
         }
 
-        public bool CreateAccount()
+        public ActionTakenStart Login()
         {
+            string? email = _textGraphicalUserInterface.FillInFormField("\nDigite seu e-mail: ", false);
+            string? password = _textGraphicalUserInterface.FillInFormField("\nInforme sua senha: ", false);
+
             throw new NotImplementedException();
         }
 
-        public bool Login()
+        public ActionTakenStart CreateAccount()
         {
             throw new NotImplementedException();
         }
