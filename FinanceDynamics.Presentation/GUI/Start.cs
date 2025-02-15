@@ -1,4 +1,5 @@
-﻿using FinanceDynamics.Presentation.Enums;
+﻿using FinanceDynamics.Application.Interfaces;
+using FinanceDynamics.Presentation.Enums;
 using FinanceDynamics.Presentation.Interfaces;
 
 namespace FinanceDynamics.Presentation.GUI
@@ -7,12 +8,15 @@ namespace FinanceDynamics.Presentation.GUI
     {
         private readonly IGraphicalUserInterface _graphicalUserInterface;
         private readonly ITextGraphicalUserInterface _textGraphicalUserInterface;
+        private readonly IUserFactory _userFactory;
 
         public Start(IGraphicalUserInterface graphicalUserInterface, 
-            ITextGraphicalUserInterface textGraphicalUserInterface)
+            ITextGraphicalUserInterface textGraphicalUserInterface,
+            IUserFactory userFactory)
         {
             _graphicalUserInterface = graphicalUserInterface;
             _textGraphicalUserInterface = textGraphicalUserInterface;
+            _userFactory = userFactory;
         }
 
         ActionTakenStart IStart.StartApplication()
@@ -52,6 +56,15 @@ namespace FinanceDynamics.Presentation.GUI
 
         public ActionTakenStart CreateAccount()
         {
+            string? name = _textGraphicalUserInterface.FillInFormField("\nDigite seu nome: ", false);
+            string? email = _textGraphicalUserInterface.FillInFormField("\nDigite seu e-mail: ", false);
+            string? telephone = _textGraphicalUserInterface.FillInFormField("\nDigite seu telefone: ", false);
+            string? codeStandardCurrency = 
+                _textGraphicalUserInterface.FillInFormField
+                ("\nDigite o código da moeda em que suas finanças devem ser calculadas: ", false);
+            string? password = 
+                _textGraphicalUserInterface.FillInTheConfidentialFieldOnTheForm("\nDigite sua senha: ");
+
             throw new NotImplementedException();
         }
     }

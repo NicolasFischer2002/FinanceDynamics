@@ -84,5 +84,41 @@ namespace FinanceDynamics.Presentation.GUI
             return input;
         }
 
+        /// <summary>
+        /// Reads a confidential input from the user, displaying '*' instead of the actual characters.
+        /// </summary>
+        /// <param name="message">The message to display before the input prompt.</param>
+        /// <returns>The user's input as a string.</returns>
+        public string? FillInTheConfidentialFieldOnTheForm(string message)
+        {
+            Console.WriteLine(message);
+            Console.Write("➤ ");
+
+            string input = "";
+            ConsoleKeyInfo key;
+
+            do
+            {
+                key = Console.ReadKey(intercept: true); // Captures the key without displaying it in the terminal.
+
+                if (key.Key == ConsoleKey.Enter)
+                {
+                    Console.WriteLine(); // Moves to a new line when Enter is pressed.
+                    break;
+                }
+                else if (key.Key == ConsoleKey.Backspace && input.Length > 0)
+                {
+                    input = input[..^1]; // Removes the last character from the input string.
+                    Console.Write("\b \b"); // Erases the last '*' from the console.
+                }
+                else if (!char.IsControl(key.KeyChar)) // Ignores control keys (Ctrl, Shift, etc.).
+                {
+                    input += key.KeyChar;
+                    Console.Write("*"); // Displays '*' instead of the actual character.
+                }
+            } while (true);
+
+            return input;
+        }
     }
 }

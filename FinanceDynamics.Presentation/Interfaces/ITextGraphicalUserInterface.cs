@@ -4,5 +4,6 @@
     {
         int CreateMenu(string title, IReadOnlyList<string> options);
         string? FillInFormField(string message, bool nullableField);
+        string? FillInTheConfidentialFieldOnTheForm(string message);
     }
 }
