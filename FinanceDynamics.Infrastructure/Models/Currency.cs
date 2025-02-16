@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace FinanceDynamics.Infrastructure.Models;
+﻿namespace FinanceDynamics.Infrastructure.Models;
 
 public partial class Currency
 {

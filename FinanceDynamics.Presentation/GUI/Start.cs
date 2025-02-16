@@ -1,4 +1,5 @@
 ﻿using FinanceDynamics.Application.Interfaces;
+using FinanceDynamics.Domain.Entities;
 using FinanceDynamics.Presentation.Enums;
 using FinanceDynamics.Presentation.Interfaces;
 
@@ -48,24 +49,27 @@ namespace FinanceDynamics.Presentation.GUI
 
         public ActionTakenStart Login()
         {
-            string? email = _textGraphicalUserInterface.FillInFormField("\nDigite seu e-mail: ", false);
-            string? password = _textGraphicalUserInterface.FillInFormField("\nInforme sua senha: ", false);
+            string email = _textGraphicalUserInterface.FillInTheRequiredFieldOnTheForm("\nDigite seu e-mail: ");
+            string password = _textGraphicalUserInterface.FillInTheRequiredFieldOnTheForm("\nInforme sua senha: ");
 
-            throw new NotImplementedException();
+            return ActionTakenStart.LoginSuccessful;
         }
 
         public ActionTakenStart CreateAccount()
         {
-            string? name = _textGraphicalUserInterface.FillInFormField("\nDigite seu nome: ", false);
-            string? email = _textGraphicalUserInterface.FillInFormField("\nDigite seu e-mail: ", false);
-            string? telephone = _textGraphicalUserInterface.FillInFormField("\nDigite seu telefone: ", false);
-            string? codeStandardCurrency = 
-                _textGraphicalUserInterface.FillInFormField
-                ("\nDigite o código da moeda em que suas finanças devem ser calculadas: ", false);
+            string name = _textGraphicalUserInterface.FillInTheRequiredFieldOnTheForm("\nDigite seu nome: ");
+            string email = _textGraphicalUserInterface.FillInTheRequiredFieldOnTheForm("\nDigite seu e-mail: ");
+            string telephone = _textGraphicalUserInterface
+                .FillInTheRequiredFieldOnTheForm("\nDigite seu telefone: ");
+            string codeStandardCurrency = 
+                _textGraphicalUserInterface.FillInTheRequiredFieldOnTheForm
+                ("\nDigite o código da moeda em que suas finanças devem ser calculadas: ");
             string? password = 
                 _textGraphicalUserInterface.FillInTheConfidentialFieldOnTheForm("\nDigite sua senha: ");
 
-            throw new NotImplementedException();
+            User user = _userFactory.Create(name, email, telephone, codeStandardCurrency, password);
+
+            return ActionTakenStart.LoginSuccessful;
         }
     }
 }

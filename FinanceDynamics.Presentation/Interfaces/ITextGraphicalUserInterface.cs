@@ -3,7 +3,8 @@
     internal interface ITextGraphicalUserInterface
     {
         int CreateMenu(string title, IReadOnlyList<string> options);
-        string? FillInFormField(string message, bool nullableField);
-        string? FillInTheConfidentialFieldOnTheForm(string message);
+        string FillInTheRequiredFieldOnTheForm(string message);
+        string? FillInTheNonMandatoryFieldOfTheForm(string message);
+        string FillInTheConfidentialFieldOnTheForm(string message);
     }
 }

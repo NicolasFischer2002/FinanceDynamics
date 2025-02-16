@@ -1,4 +1,5 @@
-﻿using FinanceDynamics.Presentation.Interfaces;
+﻿using FinanceDynamics.Presentation.Enums;
+using FinanceDynamics.Presentation.Interfaces;
 
 namespace FinanceDynamics.Presentation.GUI
 {
@@ -19,7 +20,7 @@ namespace FinanceDynamics.Presentation.GUI
 
             do
             {
-                var InitialReturn = _start.StartApplication();
+                ActionTakenStart InitialReturn = _start.StartApplication();
 
 
             } while (_continue == true);

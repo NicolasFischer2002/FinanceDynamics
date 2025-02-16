@@ -1,10 +1,13 @@
 ﻿using FinanceDynamics.Application.Factories;
 using FinanceDynamics.Application.Interfaces;
+using FinanceDynamics.Domain.Entities;
 using FinanceDynamics.Domain.Interfaces;
 using FinanceDynamics.Domain.Services;
 using FinanceDynamics.Infrastructure.Context;
 using FinanceDynamics.Infrastructure.Database;
 using FinanceDynamics.Infrastructure.Interfaces;
+using FinanceDynamics.Infrastructure.Mappers;
+using FinanceDynamics.Infrastructure.Repositories;
 using FinanceDynamics.Presentation.GUI;
 using FinanceDynamics.Presentation.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -96,6 +99,10 @@ static IHostBuilder CreateHostBuilder(string[] args) =>
             services.AddScoped<ICDBValidator, CDBValidator>();
             services.AddScoped<IShareCalculate, ShareCalculate>();
             services.AddScoped<IShareValidator, ShareValidator>();
+
+            // Repositories
+            services.AddScoped<ICurrencyRepository, CurrencyRepository>();
+            services.AddScoped<IMapper<Currency, CurrencyMapper>, CurrencyMapper>();
 
             // GUI
             services.AddTransient<IStartApp, StartApp>();

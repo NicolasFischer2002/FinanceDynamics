@@ -4,6 +4,8 @@ namespace FinanceDynamics.Presentation.GUI
 {
     internal class TextGraphicalUserInterface : ITextGraphicalUserInterface
     {
+        private const string NavigationIcon = "➤";
+
         private void AddTitle(string title)
         {
             Console.WriteLine($"\n[ {title.ToUpper()} ]\n");
@@ -12,7 +14,7 @@ namespace FinanceDynamics.Presentation.GUI
         private void AddOption(int number, string option, bool isSelected)
         {
             if (isSelected)
-                Console.WriteLine($"➤ {number} - {option}"); // Highlights the current option.
+                Console.WriteLine($"{NavigationIcon} {number} - {option}"); // Highlights the current option.
             else
                 Console.WriteLine($"  {number} - {option}"); // Normal option.
         }
@@ -60,18 +62,17 @@ namespace FinanceDynamics.Presentation.GUI
             }
         }
 
-        public string? FillInFormField(string message, bool nullableField)
+        public string FillInTheRequiredFieldOnTheForm(string message)
         {
             string? input;
 
             while (true)
             {
                 Console.WriteLine(message);
-                Console.Write("➤ ");
+                Console.Write($"{NavigationIcon} ");
                 input = Console.ReadLine();
 
-                // If the field is not nullable and the user does not fill it in.
-                if (!nullableField && string.IsNullOrWhiteSpace(input))
+                if (string.IsNullOrWhiteSpace(input))
                 {
                     Console.WriteLine("❌ Este campo é obrigatório! Por favor, preencha corretamente.");
                     continue; // Repeat the loop until the field is filled correctly.
@@ -81,6 +82,18 @@ namespace FinanceDynamics.Presentation.GUI
                 break;
             }
 
+            if (input is not null)
+                return input;
+            else
+                throw new ArgumentNullException("", "O campo não pode ser nulo ou vazio.");
+        }
+
+        public string? FillInTheNonMandatoryFieldOfTheForm(string message)
+        {
+            Console.WriteLine(message);
+            Console.Write($"{NavigationIcon} ");
+            string? input = Console.ReadLine();
+
             return input;
         }
 
@@ -89,10 +102,10 @@ namespace FinanceDynamics.Presentation.GUI
         /// </summary>
         /// <param name="message">The message to display before the input prompt.</param>
         /// <returns>The user's input as a string.</returns>
-        public string? FillInTheConfidentialFieldOnTheForm(string message)
+        public string FillInTheConfidentialFieldOnTheForm(string message)
         {
             Console.WriteLine(message);
-            Console.Write("➤ ");
+            Console.Write($"{NavigationIcon} ");
 
             string input = "";
             ConsoleKeyInfo key;

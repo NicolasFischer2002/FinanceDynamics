@@ -9,8 +9,8 @@ namespace FinanceDynamics.Domain.Entities
         public Password Password { get; private set; }
         public DateTime DateCreated { get; private set; }
 
-        internal User(string name, Contact contact, Currency standardCurrency, Password password, DateTime dateCreated) 
-            : base(name)
+        internal User(string name, Contact contact, Currency standardCurrency, Password password, 
+            DateTime dateCreated) : base(name)
         {
             Contact = contact;
             StandardCurrency = standardCurrency;
