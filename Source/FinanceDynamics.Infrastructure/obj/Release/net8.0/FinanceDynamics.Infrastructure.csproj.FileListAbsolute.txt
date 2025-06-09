@@ -15,3 +15,4 @@ C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\obj\Rel
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\obj\Release\net8.0\refint\FinanceDynamics.Infrastructure.dll
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\obj\Release\net8.0\FinanceDynamics.Infrastructure.pdb
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\obj\Release\net8.0\ref\FinanceDynamics.Infrastructure.dll
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\obj\Release\net8.0\FinanceDynamics.Infrastructure.sourcelink.json

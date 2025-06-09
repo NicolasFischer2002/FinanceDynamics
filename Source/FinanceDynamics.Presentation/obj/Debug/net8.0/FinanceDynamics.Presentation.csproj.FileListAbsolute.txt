@@ -31,6 +31,7 @@ C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Debug
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Debug\net8.0\FinanceDynamics.Presentation.AssemblyInfo.cs
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Debug\net8.0\FinanceDynamics.Presentation.csproj.CoreCompileInputs.cache
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Debug\net8.0\FinanceDynamics.Presentation.MvcApplicationPartsAssemblyInfo.cache
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Debug\net8.0\FinanceDynamics.Presentation.sourcelink.json
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Debug\net8.0\scopedcss\bundle\FinanceDynamics.Presentation.styles.css
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Debug\net8.0\staticwebassets.build.json
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Debug\net8.0\staticwebassets.build.json.cache

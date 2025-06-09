@@ -9,3 +9,4 @@ C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Release\net
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Release\net8.0\refint\FinanceDynamics.Domain.dll
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Release\net8.0\FinanceDynamics.Domain.pdb
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Release\net8.0\ref\FinanceDynamics.Domain.dll
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Release\net8.0\FinanceDynamics.Domain.sourcelink.json
