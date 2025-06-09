@@ -1,0 +1,11 @@
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\bin\Release\net8.0\FinanceDynamics.Domain.deps.json
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\bin\Release\net8.0\FinanceDynamics.Domain.dll
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\bin\Release\net8.0\FinanceDynamics.Domain.pdb
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Release\net8.0\FinanceDynamics.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Release\net8.0\FinanceDynamics.Domain.AssemblyInfoInputs.cache
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Release\net8.0\FinanceDynamics.Domain.AssemblyInfo.cs
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Release\net8.0\FinanceDynamics.Domain.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Release\net8.0\FinanceDynamics.Domain.dll
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Release\net8.0\refint\FinanceDynamics.Domain.dll
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Release\net8.0\FinanceDynamics.Domain.pdb
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Release\net8.0\ref\FinanceDynamics.Domain.dll
