@@ -168,3 +168,4 @@ C:\Desenvolvimento\FinanceDynamics\Tests\TestProject\obj\Debug\net8.0\refint\Tes
 C:\Desenvolvimento\FinanceDynamics\Tests\TestProject\obj\Debug\net8.0\TestProject.pdb
 C:\Desenvolvimento\FinanceDynamics\Tests\TestProject\obj\Debug\net8.0\TestProject.genruntimeconfig.cache
 C:\Desenvolvimento\FinanceDynamics\Tests\TestProject\obj\Debug\net8.0\ref\TestProject.dll
+C:\Desenvolvimento\FinanceDynamics\Tests\TestProject\obj\Debug\net8.0\TestProject.sourcelink.json
