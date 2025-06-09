@@ -1,4 +1,5 @@
 ﻿@inherits LayoutComponentBase
+@using FinanceDynamics.Presentation.Components.MyComponents
 
 <MudThemeProvider Theme="@_theme" IsDarkMode="_isDarkMode" />
 <MudLayout>
@@ -47,7 +48,6 @@
             LayoutProperties = new LayoutProperties()
         };
     }
-
 
     private void ToggleDrawer()
     {

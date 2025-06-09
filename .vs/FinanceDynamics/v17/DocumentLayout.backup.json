@@ -3,8 +3,36 @@
   "WorkspaceRootPath": "C:\\Desenvolvimento\\FinanceDynamics\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\source\\financedynamics.presentation\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:source\\financedynamics.presentation\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\source\\financedynamics.presentation\\components\\mycomponents\\customcard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:source\\financedynamics.presentation\\components\\mycomponents\\customcard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\source\\financedynamics.presentation\\components\\pages\\addexpense.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:source\\financedynamics.presentation\\components\\pages\\addexpense.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\source\\financedynamics.presentation\\components\\pages\\viewexpenses.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:source\\financedynamics.presentation\\components\\pages\\viewexpenses.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\source\\financedynamics.presentation\\components\\mycomponents\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:source\\financedynamics.presentation\\components\\mycomponents\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\source\\financedynamics.presentation\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:source\\financedynamics.presentation\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\source\\financedynamics.presentation\\components\\pages\\viewincomes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:source\\financedynamics.presentation\\components\\pages\\viewincomes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\source\\financedynamics.presentation\\components\\pages\\addincome.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:source\\financedynamics.presentation\\components\\pages\\addincome.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +42,117 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "MainLayout.razor",
               "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "Source\\FinanceDynamics.Presentation\\Components\\Layout\\MainLayout.razor",
               "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Layout\\MainLayout.razor",
               "RelativeToolTip": "Source\\FinanceDynamics.Presentation\\Components\\Layout\\MainLayout.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-09T17:30:41.113Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\MyComponents\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Source\\FinanceDynamics.Presentation\\Components\\MyComponents\\NavMenu.razor",
+              "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\MyComponents\\NavMenu.razor",
+              "RelativeToolTip": "Source\\FinanceDynamics.Presentation\\Components\\MyComponents\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-09T20:22:53.165Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-09T20:34:34.534Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AddIncome.razor",
+              "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddIncome.razor",
+              "RelativeDocumentMoniker": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddIncome.razor",
+              "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddIncome.razor",
+              "RelativeToolTip": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddIncome.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-09T20:34:19.431Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ViewIncomes.razor",
+              "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\ViewIncomes.razor",
+              "RelativeDocumentMoniker": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\ViewIncomes.razor",
+              "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\ViewIncomes.razor",
+              "RelativeToolTip": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\ViewIncomes.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-09T20:36:58.421Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddExpense.razor",
+              "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddExpense.razor",
+              "RelativeDocumentMoniker": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddExpense.razor",
+              "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddExpense.razor",
+              "RelativeToolTip": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddExpense.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-09T20:38:10.914Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ViewExpenses.razor",
+              "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\ViewExpenses.razor",
+              "RelativeDocumentMoniker": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\ViewExpenses.razor",
+              "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\ViewExpenses.razor",
+              "RelativeToolTip": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\ViewExpenses.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-09T20:40:35.087Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomCard.razor",
+              "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\MyComponents\\CustomCard.razor",
+              "RelativeDocumentMoniker": "Source\\FinanceDynamics.Presentation\\Components\\MyComponents\\CustomCard.razor",
+              "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\MyComponents\\CustomCard.razor",
+              "RelativeToolTip": "Source\\FinanceDynamics.Presentation\\Components\\MyComponents\\CustomCard.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-09T21:37:38.42Z",
               "IsPinned": true,
               "EditorCaption": ""
             },

@@ -1,0 +1,14 @@
+﻿@code {
+    [Parameter]
+    public string Title { get; set; } = "Default Title";
+
+    [Parameter]
+    public string Content { get; set; } = "Default Content";
+}
+
+<MudCard>
+    <MudCardContent>
+        <MudText>@Title</MudText>
+        <MudText Typo="Typo.body2">@Content</MudText>
+    </MudCardContent>
+</MudCard>

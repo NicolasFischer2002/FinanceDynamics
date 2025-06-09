@@ -31,12 +31,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Desenvolvimento/FinanceDynamics/Source/FinanceDynamics.Presentation/Components/Layout/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
+[C:/Desenvolvimento/FinanceDynamics/Source/FinanceDynamics.Presentation/Components/MyComponents/CustomCard.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNeUNvbXBvbmVudHNcQ3VzdG9tQ2FyZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Desenvolvimento/FinanceDynamics/Source/FinanceDynamics.Presentation/Components/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
+[C:/Desenvolvimento/FinanceDynamics/Source/FinanceDynamics.Presentation/Components/MyComponents/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNeUNvbXBvbmVudHNcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Desenvolvimento/FinanceDynamics/Source/FinanceDynamics.Presentation/Components/Pages/AddExpense.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGRFeHBlbnNlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Desenvolvimento/FinanceDynamics/Source/FinanceDynamics.Presentation/Components/Pages/AddIncome.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGRJbmNvbWUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Desenvolvimento/FinanceDynamics/Source/FinanceDynamics.Presentation/Components/Pages/Error.razor]
@@ -47,8 +55,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Desenvolvimento/FinanceDynamics/Source/FinanceDynamics.Presentation/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
+[C:/Desenvolvimento/FinanceDynamics/Source/FinanceDynamics.Presentation/Components/Pages/ViewExpenses.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xWaWV3RXhwZW5zZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Desenvolvimento/FinanceDynamics/Source/FinanceDynamics.Presentation/Components/Pages/ViewIncomes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xWaWV3SW5jb21lcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Desenvolvimento/FinanceDynamics/Source/FinanceDynamics.Presentation/Components/Routes.razor]
