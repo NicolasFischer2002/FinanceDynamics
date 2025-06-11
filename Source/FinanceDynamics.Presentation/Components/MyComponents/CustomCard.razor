@@ -4,11 +4,17 @@
 
     [Parameter]
     public string Content { get; set; } = "Default Content";
+
+    [Parameter]
+    public string BackgroundColor { get; set; } = "";
+
+    [Parameter]
+    public string TextColor { get; set; } = "";
 }
 
-<MudCard>
+<MudCard Style="@($"background-color: {BackgroundColor};")">
     <MudCardContent>
-        <MudText>@Title</MudText>
-        <MudText Typo="Typo.body2">@Content</MudText>
+        <MudText Style="@($"color: {TextColor};")" Typo="Typo.body1">@Title</MudText>
+        <MudText Style="@($"color: {TextColor};")" Align="Align.Right" Typo="Typo.h6">@Content</MudText>
     </MudCardContent>
 </MudCard>

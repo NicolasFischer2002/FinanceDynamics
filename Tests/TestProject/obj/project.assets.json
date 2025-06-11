@@ -1632,23 +1632,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\NicolasFischer\\.nuget\\packages\\": {},
+    "C:\\Users\\Nicolas Fischer\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\NicolasFischer\\Desktop\\FinanceDynamics\\Tests\\TestProject\\TestProject.csproj",
+      "projectUniqueName": "C:\\Desenvolvimento\\FinanceDynamics\\Tests\\TestProject\\TestProject.csproj",
       "projectName": "TestProject",
-      "projectPath": "C:\\Users\\NicolasFischer\\Desktop\\FinanceDynamics\\Tests\\TestProject\\TestProject.csproj",
-      "packagesPath": "C:\\Users\\NicolasFischer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\NicolasFischer\\Desktop\\FinanceDynamics\\Tests\\TestProject\\obj\\",
+      "projectPath": "C:\\Desenvolvimento\\FinanceDynamics\\Tests\\TestProject\\TestProject.csproj",
+      "packagesPath": "C:\\Users\\Nicolas Fischer\\.nuget\\packages\\",
+      "outputPath": "C:\\Desenvolvimento\\FinanceDynamics\\Tests\\TestProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\NicolasFischer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nicolas Fischer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1657,6 +1657,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1675,7 +1676,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -1718,7 +1719,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
