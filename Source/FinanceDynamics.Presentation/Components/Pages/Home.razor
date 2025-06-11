@@ -15,6 +15,19 @@
     </MudItem>
 </MudGrid>
 
-@code {
+<MudPaper Class="pa-4 mt-8">
+    <MudText Align="Align.Center" Typo="Typo.h6">Receitas</MudText>
+    <MudChart Class="mt-4" ChartType="ChartType.Pie" InputData="@IncomeData" InputLabels="@IncomeLabels" Width="300px" Height="300px" />
+</MudPaper>
+<MudPaper Class="pa-4 mt-8">
+    <MudText Align="Align.Center" Typo="Typo.h6">Despesas</MudText>
+    <MudChart Class="mt-4" ChartType="ChartType.Pie" InputData="@ExpenseData" InputLabels="@ExpenseLabels" Width="300px" Height="300px" />
+</MudPaper>
 
+@code {
+    private double[] IncomeData = [2000, 4000, 4000];
+    private string[] IncomeLabels = ["Salário", "Devolução", "Dividendos"];
+
+    private double[] ExpenseData = [2000, 2000, 2000];
+    private string[] ExpenseLabels = ["Transporte", "Alimentação", "Lazer"];
 }

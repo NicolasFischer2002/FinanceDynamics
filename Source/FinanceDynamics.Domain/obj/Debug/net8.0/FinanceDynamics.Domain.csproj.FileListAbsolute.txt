@@ -10,3 +10,15 @@ C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.pdb
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.0\ref\FinanceDynamics.Domain.dll
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.sourcelink.json
+C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\bin\Debug\net8.0\FinanceDynamics.Domain.deps.json
+C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\bin\Debug\net8.0\FinanceDynamics.Domain.dll
+C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\bin\Debug\net8.0\FinanceDynamics.Domain.pdb
+C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.AssemblyInfoInputs.cache
+C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.AssemblyInfo.cs
+C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.csproj.CoreCompileInputs.cache
+C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.sourcelink.json
+C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.dll
+C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.0\refint\FinanceDynamics.Domain.dll
+C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.pdb
+C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.0\ref\FinanceDynamics.Domain.dll
