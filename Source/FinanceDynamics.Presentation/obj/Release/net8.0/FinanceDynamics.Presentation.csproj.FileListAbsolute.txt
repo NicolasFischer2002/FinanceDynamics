@@ -44,3 +44,7 @@ C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Relea
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Release\net8.0\FinanceDynamics.Presentation.pdb
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Release\net8.0\FinanceDynamics.Presentation.genruntimeconfig.cache
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Release\net8.0\ref\FinanceDynamics.Presentation.dll
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Release\net8.0\rpswa.dswa.cache.json
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Release\net8.0\rjimswa.dswa.cache.json
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Release\net8.0\rjsmrazor.dswa.cache.json
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Presentation\obj\Release\net8.0\rjsmcshtml.dswa.cache.json
