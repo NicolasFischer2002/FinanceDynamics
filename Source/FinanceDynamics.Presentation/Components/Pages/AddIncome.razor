@@ -1,9 +1,122 @@
 ﻿@page "/AddIncome"
+@using System.Globalization
+@using System.Threading
 
 <PageTitle>Adicionar receita</PageTitle>
 
-<MudText Typo="Typo.h6" GutterBottom="true">Adicionar receita</MudText>
+<MudText Typo="Typo.h6" GutterBottom="true" Class="d-flex align-items-center">
+    <MudIcon Icon="@Icons.Material.Filled.AccountBalanceWallet"
+             Size="Size.Medium"
+             Class="me-3 align-self-center" />
+    Adicionar receita
+</MudText>
+
+<MudGrid>
+    <MudItem xs="4">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
+            <MudNumericField Immediate="false"
+                             Label="Valor em reais"
+                             Format="C2"
+                             Culture="@_ptBR"
+                             T="decimal?"
+                             @bind-Value="_valueBr" />
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="4">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
+            <MudAutocomplete T="string" Label="Categoria" @bind-Value="Category" SearchFunc="@SearchCategory"
+                             ResetValueOnEmptyText="@resetValueOnEmptyTextCategory"
+                             CoerceText="@coerceTextCategory" CoerceValue="@coerceValueCategory" SelectValueOnTab="@selectedOnTabCategory" />
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="4">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
+            <MudAutocomplete T="string" Label="Subcagoria" @bind-Value="Subcategory" SearchFunc="@SearchSubcategories"
+                             ResetValueOnEmptyText="@resetValueOnEmptyTextSubcategory"
+                             CoerceText="@coerceTextSubcategory" CoerceValue="@coerceValueSubcategory" SelectValueOnTab="@selectedOnTabSubcategory" />
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="6">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
+            <MudAutocomplete T="string" Label="Método de pagamento" @bind-Value="PaymentMethod" SearchFunc="@SearchPaymentMethods"
+                             ResetValueOnEmptyText="@resetValueOnEmptyTextPaymentMethod"
+                             CoerceText="@coerceTextPaymentMethod" CoerceValue="@coerceValuePaymentMethod" SelectValueOnTab="@selectedOnTabPaymentMethod" />
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="6">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
+            <MudDatePicker Label="Data" @bind-Date="Date" />
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="12">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
+            <MudTextField T="string" MaxLength="250" HelperText="Opcional" Immediate="true" Label="Descrição" Variant="Variant.Text" />
+        </MudPaper>
+    </MudItem>
+</MudGrid>
+
+<MudButton Class="mt-6" Variant="Variant.Filled" Color="Color.Primary" FullWidth="true">Cadastrar</MudButton>
 
 @code {
+    private readonly CultureInfo _ptBR = CultureInfo.GetCultureInfo("pt-BR");
+    private decimal? _valueBr = 0M;
 
+    private string Category = string.Empty;
+    private IEnumerable<string> Categories = ["Salário", "Bonificação", "Dividendos"];
+
+    private async Task<IEnumerable<string>> SearchCategory(string value, CancellationToken token)
+    {
+        await Task.Delay(5, token);
+
+        if (string.IsNullOrWhiteSpace(value))
+            return Categories;
+
+        return Categories.Where(x => x.Contains(value, StringComparison.InvariantCultureIgnoreCase));
+    }
+
+    private bool resetValueOnEmptyTextCategory;
+    private bool coerceTextCategory;
+    private bool coerceValueCategory;
+    private bool selectedOnTabCategory;
+
+
+    private string Subcategory = string.Empty;
+    private IEnumerable<string> Subcategories = ["Emprego fixo", "Freelancer"];
+
+    private async Task<IEnumerable<string>> SearchSubcategories(string value, CancellationToken token)
+    {
+        await Task.Delay(5, token);
+
+        if (string.IsNullOrWhiteSpace(value))
+            return Subcategories;
+
+        return Subcategories.Where(x => x.Contains(value, StringComparison.InvariantCultureIgnoreCase));
+    }
+
+    private bool resetValueOnEmptyTextSubcategory;
+    private bool coerceTextSubcategory;
+    private bool coerceValueSubcategory;
+    private bool selectedOnTabSubcategory;
+
+
+    private string PaymentMethod = string.Empty;
+    private IEnumerable<string> PaymentMethods = ["Depósito", "PIX", "Cartão de crédito", "Cartão de débito"];
+
+    private async Task<IEnumerable<string>> SearchPaymentMethods(string value, CancellationToken token)
+    {
+        await Task.Delay(5, token);
+
+        if (string.IsNullOrWhiteSpace(value))
+            return PaymentMethods;
+
+        return PaymentMethods.Where(x => x.Contains(value, StringComparison.InvariantCultureIgnoreCase));
+    }
+
+    private bool resetValueOnEmptyTextPaymentMethod;
+    private bool coerceTextPaymentMethod;
+    private bool coerceValuePaymentMethod;
+    private bool selectedOnTabPaymentMethod;
+
+
+    private DateTime? Date = DateTime.Today;
 }
