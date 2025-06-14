@@ -1,0 +1,49 @@
+﻿<MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
+    <MudFileUpload T="IBrowserFile"
+                   FilesChanged="HandleFileUpload">
+        <ActivatorContent>
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       StartIcon="@Icons.Material.Filled.CloudUpload">
+                Adicionar comprovante
+            </MudButton>
+        </ActivatorContent>
+    </MudFileUpload>
+
+    @if (_files.Any())
+    {
+        <MudText Class="ml-4" Typo="@Typo.h6">
+            @_files.Count Arquivo@(_files.Count == 1 ? "" : "s"):
+        </MudText>
+        <MudList T="string">
+            @foreach (var file in _files)
+            {
+                <MudListItem Icon="@Icons.Material.Filled.AttachFile" @key="file.Name">
+                    @file.Name <code>@file.Size bytes</code>
+                </MudListItem>
+            }
+        </MudList>
+    }
+</MudPaper>
+
+@code {
+    [Parameter]
+    public EventCallback<List<IBrowserFile>> FilesChanged { get; set; }
+
+    public IReadOnlyList<IBrowserFile> Files => _files;
+
+    private List<IBrowserFile> _files = new();
+
+    private async Task HandleFileUpload(IBrowserFile file)
+    {
+        if (file == null)
+            return;
+
+        _files.Clear();
+        _files.Add(file);
+
+        // Notify parent component.
+        if (FilesChanged.HasDelegate)
+            await FilesChanged.InvokeAsync(_files);
+    }
+}

@@ -1,6 +1,7 @@
 ﻿@page "/AddExpense"
 @using System.Globalization
 @using System.Threading
+@using FinanceDynamics.Presentation.Components.MyComponents
 
 <PageTitle>Adicionar despesa</PageTitle>
 
@@ -52,6 +53,10 @@
         <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
             <MudTextField T="string" MaxLength="250" HelperText="Opcional" Immediate="true" Label="Descrição" Variant="Variant.Text" />
         </MudPaper>
+    </MudItem>
+    <MudItem xs="12">
+        <FileUploader @ref="_fileUploader"
+                      FilesChanged="OnFilesUpdated" />
     </MudItem>
 </MudGrid>
 
@@ -131,4 +136,12 @@
 
 
     private DateTime? Date = DateTime.Today;
+
+
+    private FileUploader? _fileUploader;
+
+    private void OnFilesUpdated(List<IBrowserFile> files)
+    {
+        
+    }
 }

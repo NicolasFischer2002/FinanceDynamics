@@ -10,16 +10,18 @@ namespace FinanceDynamics.Domain.Entities
         private TransactionCategory Category { get; set; }
         private TransactionMethod Method { get; set; }
         private DateTime Date { get; set; }
-        private TransactionDescription Description { get; set; }
+        private TransactionDescription? Description { get; set; }
+        private TransactionReceipt? Receipt { get; set; }
 
         protected Transaction(Money value, TransactionCategory category, TransactionMethod method, 
-            DateTime date, TransactionDescription description)
+            DateTime date, TransactionDescription? description, TransactionReceipt? receipt)
         {
             Value = value;
             Category = category;
             Method = method;
             Date = date;
             Description = description;
+            Receipt = receipt;
         }
     }
 }

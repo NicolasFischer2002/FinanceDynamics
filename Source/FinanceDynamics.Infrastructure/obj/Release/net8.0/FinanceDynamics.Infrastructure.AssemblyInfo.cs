@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FinanceDynamics.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36fd5b3b89d29d852e27aa5bce5087168faaa308")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4dcedee3f80aea8d747da9452120484cba3d9bc5")]
 [assembly: System.Reflection.AssemblyProductAttribute("FinanceDynamics.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FinanceDynamics.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
