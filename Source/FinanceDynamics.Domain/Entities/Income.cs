@@ -3,11 +3,17 @@ using FinanceDynamics.Domain.ValueObjects;
 
 namespace FinanceDynamics.Domain.Entities
 {
-    public class Income : Transaction
+    public class Income : Transaction<IncomeCategory, IncomeSubcategory>
     {
-        public Income(Money value, TransactionCategory category, TransactionMethod method, DateTime date, 
-            TransactionDescription? description, TransactionReceipt? receipt) 
-            : base(value, category, method, date, description, receipt)
+        public Income(
+            Money value,
+            IncomeCategory category,
+            IncomeSubcategory? subcategory,
+            TransactionMethod method,
+            DateTime date,
+            TransactionDescription? description = null,
+            TransactionReceipt? receipt = null)
+            : base(value, category, subcategory, method, date, description, receipt)
         {
 
         }

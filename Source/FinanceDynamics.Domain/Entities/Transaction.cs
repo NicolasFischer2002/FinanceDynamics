@@ -3,21 +3,33 @@ using FinanceDynamics.Domain.ValueObjects;
 
 namespace FinanceDynamics.Domain.Entities
 {
-    public abstract class Transaction
+    public abstract class Transaction<TCategory, TSubcategory>
+        where TCategory : TransactionCategory
+        where TSubcategory : SubcategoryTransaction<TCategory>?
     {
-        private Guid Id { get; set; }
-        private Money Value { get; set; }
-        private TransactionCategory Category { get; set; }
-        private TransactionMethod Method { get; set; }
-        private DateTime Date { get; set; }
-        private TransactionDescription? Description { get; set; }
-        private TransactionReceipt? Receipt { get; set; }
+        public Guid Id { get; private set; }
+        public Money Value { get; private set; }
+        public TCategory Category { get; private set; }
+        public TSubcategory? Subcategory { get; private set; }
+        public TransactionMethod Method { get; private set; }
+        public DateTime Date { get; private set; }
+        public TransactionDescription? Description { get; private set; }
+        public TransactionReceipt? Receipt { get; private set; }
 
-        protected Transaction(Money value, TransactionCategory category, TransactionMethod method, 
-            DateTime date, TransactionDescription? description, TransactionReceipt? receipt)
+        protected Transaction(
+            Money value,
+            TCategory category,
+            TSubcategory? subcategory,
+            TransactionMethod method,
+            DateTime date,
+            TransactionDescription? description = null,
+            TransactionReceipt? receipt = null)
         {
+
+            Id = Guid.NewGuid();
             Value = value;
             Category = category;
+            Subcategory = subcategory;
             Method = method;
             Date = date;
             Description = description;

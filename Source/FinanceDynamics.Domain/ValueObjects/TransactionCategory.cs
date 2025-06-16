@@ -1,14 +1,12 @@
 ﻿namespace FinanceDynamics.Domain.ValueObjects
 {
-    public sealed class TransactionCategory
+    public abstract record TransactionCategory
     {
-        private string Name { get; set; }
-        private SubcategoryTransaction? Subcategory { get; set; }
+        public string Name { get; private set; }
 
-        public TransactionCategory(string name, SubcategoryTransaction? subcategory) 
+        public TransactionCategory(string name)
         {
             Name = name;
-            Subcategory = subcategory;
         }
     }
 }

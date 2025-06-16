@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FinanceDynamics.Application\FinanceDynamics.Application.csproj" />
     <ProjectReference Include="..\FinanceDynamics.Domain\FinanceDynamics.Domain.csproj" />
   </ItemGroup>
 

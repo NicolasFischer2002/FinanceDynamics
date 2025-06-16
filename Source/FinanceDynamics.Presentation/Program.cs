@@ -1,3 +1,8 @@
+using FinanceDynamics.Application.Factories;
+using FinanceDynamics.Application.Interfaces;
+using FinanceDynamics.Domain.Interfaces;
+using FinanceDynamics.Domain.Services;
+using FinanceDynamics.Domain.Validators;
 using FinanceDynamics.Presentation.Components;
 using MudBlazor.Services;
 
@@ -5,6 +10,19 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add MudBlazor services
 builder.Services.AddMudServices();
+
+builder.Services.AddTransient(
+    typeof(IValidateTransactionCategoryAndSubcategory<,>),
+    typeof(TransactionCategoryValidator<,>)
+);
+
+// Services
+builder.Services.AddTransient<ITransactionCategoryService, TransactionCategoryService>();
+builder.Services.AddTransient<ITransactionSubcategoryService, TransactionSubcategoryService>();
+
+// Factories 
+builder.Services.AddTransient<IExpenseFactory, ExpenseFactory>();
+builder.Services.AddTransient<IIncomeFactory, IncomeFactory>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()

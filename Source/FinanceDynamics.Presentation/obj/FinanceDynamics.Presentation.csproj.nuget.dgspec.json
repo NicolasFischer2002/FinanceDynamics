@@ -32,7 +32,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Domain\\FinanceDynamics.Domain.csproj": {
+                "projectPath": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Domain\\FinanceDynamics.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -165,9 +169,6 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Application\\FinanceDynamics.Application.csproj": {
-                "projectPath": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Application\\FinanceDynamics.Application.csproj"
-              },
               "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Domain\\FinanceDynamics.Domain.csproj": {
                 "projectPath": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Domain\\FinanceDynamics.Domain.csproj"
               }

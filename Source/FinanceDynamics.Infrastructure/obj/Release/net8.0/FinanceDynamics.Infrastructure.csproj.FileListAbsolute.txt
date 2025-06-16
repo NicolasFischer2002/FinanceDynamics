@@ -1,9 +1,7 @@
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\bin\Release\net8.0\FinanceDynamics.Infrastructure.deps.json
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\bin\Release\net8.0\FinanceDynamics.Infrastructure.dll
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\bin\Release\net8.0\FinanceDynamics.Infrastructure.pdb
-C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\bin\Release\net8.0\FinanceDynamics.Application.dll
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\bin\Release\net8.0\FinanceDynamics.Domain.dll
-C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\bin\Release\net8.0\FinanceDynamics.Application.pdb
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\bin\Release\net8.0\FinanceDynamics.Domain.pdb
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\obj\Release\net8.0\FinanceDynamics.Infrastructure.csproj.AssemblyReference.cache
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\obj\Release\net8.0\FinanceDynamics.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig

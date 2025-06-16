@@ -1,0 +1,52 @@
+﻿@using FinanceDynamics.Domain.Enums
+@using FinanceDynamics.Domain.Interfaces
+@inject ITransactionSubcategoryService SubcategoryService
+
+<MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
+    <MudAutocomplete T="string"
+                     Label="@Label"
+                     Value="Value"
+                     ValueChanged="OnValueChanged"
+                     SearchFunc="SearchSubcategories"
+                     ResetValueOnEmptyText="@ResetValueOnEmptyText"
+                     CoerceText="@CoerceText"
+                     CoerceValue="@CoerceValue"
+                     SelectValueOnTab="@SelectValueOnTab" />
+</MudPaper>
+
+@code {
+    [Parameter] public TransactionKind Kind { get; set; }
+    [Parameter] public string ParentCategory { get; set; } = string.Empty;
+
+    [Parameter] public string Label { get; set; } = "Subcategoria";
+    [Parameter] public string Value { get; set; } = string.Empty;
+    [Parameter] public EventCallback<string> ValueChanged { get; set; }
+
+    private IEnumerable<string> _subcategories = Array.Empty<string>();
+
+    private bool ResetValueOnEmptyText = false;
+    private bool CoerceText = false;
+    private bool CoerceValue = false;
+    private bool SelectValueOnTab = false;
+
+    protected override void OnParametersSet()
+    {
+        _subcategories = string.IsNullOrEmpty(ParentCategory)
+            ? Array.Empty<string>()
+            : SubcategoryService.GetSubcategories(Kind, ParentCategory);
+    }
+
+    private Task<IEnumerable<string>> SearchSubcategories(string value, CancellationToken _)
+    {
+        var list = string.IsNullOrWhiteSpace(value)
+            ? _subcategories
+            : _subcategories.Where(x => x.Contains(value, StringComparison.InvariantCultureIgnoreCase));
+        return Task.FromResult(list);
+    }
+
+    private async Task OnValueChanged(string newValue)
+    {
+        Value = newValue;
+        await ValueChanged.InvokeAsync(newValue);
+    }
+}

@@ -10,3 +10,7 @@ C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Application\obj\Releas
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Application\obj\Release\net8.0\FinanceDynamics.Application.pdb
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Application\obj\Release\net8.0\ref\FinanceDynamics.Application.dll
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Application\obj\Release\net8.0\FinanceDynamics.Application.sourcelink.json
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Application\bin\Release\net8.0\FinanceDynamics.Domain.dll
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Application\bin\Release\net8.0\FinanceDynamics.Domain.pdb
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Application\obj\Release\net8.0\FinanceDynamics.Application.csproj.AssemblyReference.cache
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Application\obj\Release\net8.0\FinanceD.6C769986.Up2Date

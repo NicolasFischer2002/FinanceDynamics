@@ -160,6 +160,9 @@
       },
       "System.IO.Pipelines/8.0.0": {},
       "FinanceDynamics.Application/1.0.0": {
+        "dependencies": {
+          "FinanceDynamics.Domain": "1.0.0"
+        },
         "runtime": {
           "FinanceDynamics.Application.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -177,7 +180,6 @@
       },
       "FinanceDynamics.Infrastructure/1.0.0": {
         "dependencies": {
-          "FinanceDynamics.Application": "1.0.0",
           "FinanceDynamics.Domain": "1.0.0"
         },
         "runtime": {

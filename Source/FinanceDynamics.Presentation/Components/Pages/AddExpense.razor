@@ -1,6 +1,7 @@
 ﻿@page "/AddExpense"
 @using System.Globalization
 @using System.Threading
+@using FinanceDynamics.Domain.Enums
 @using FinanceDynamics.Presentation.Components.MyComponents
 
 <PageTitle>Adicionar despesa</PageTitle>
@@ -24,18 +25,15 @@
         </MudPaper>
     </MudItem>
     <MudItem xs="4">
-        <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
-            <MudAutocomplete T="string" Label="Categoria" @bind-Value="Category" SearchFunc="@SearchCategory"
-                             ResetValueOnEmptyText="@resetValueOnEmptyTextCategory"
-                             CoerceText="@coerceTextCategory" CoerceValue="@coerceValueCategory" SelectValueOnTab="@selectedOnTabCategory" />
-        </MudPaper>
+        <CategorySelect Kind="TransactionKind.Expense"
+                        Label="Categoria"
+                        @bind-Value="Category" />
     </MudItem>
     <MudItem xs="4">
-        <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
-            <MudAutocomplete T="string" Label="Subcagoria" @bind-Value="Subcategory" SearchFunc="@SearchSubcategories"
-                             ResetValueOnEmptyText="@resetValueOnEmptyTextSubcategory"
-                             CoerceText="@coerceTextSubcategory" CoerceValue="@coerceValueSubcategory" SelectValueOnTab="@selectedOnTabSubcategory" />
-        </MudPaper>
+        <SubcategorySelect Kind="TransactionKind.Expense"
+                           ParentCategory="@Category"
+                           Label="Subcategoria"
+                           @bind-Value="Subcategory" />
     </MudItem>
     <MudItem xs="6">
         <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
@@ -66,54 +64,21 @@
     private readonly CultureInfo _ptBR = CultureInfo.GetCultureInfo("pt-BR");
     private decimal? _valueBr = 0M;
 
-    private string Category = string.Empty;
-    private IEnumerable<string> Categories =
-    [
-        "Alimentação",
-        "Contas e Serviços",
-        "Educação",
-        "Impostos",
-        "Lazer e Entretenimento",
-        "Moradia",
-        "Saúde",
-        "Seguros",
-        "Vestuário e Calçados",
-        "Outros"
-    ];
-
-    private async Task<IEnumerable<string>> SearchCategory(string value, CancellationToken token)
+    private string _category = string.Empty;
+    public string Category
     {
-        await Task.Delay(5, token);
-
-        if (string.IsNullOrWhiteSpace(value))
-            return Categories;
-
-        return Categories.Where(x => x.Contains(value, StringComparison.InvariantCultureIgnoreCase));
+        get => _category;
+        set
+        {
+            if (_category != value)
+            {
+                _category = value;
+                Subcategory = string.Empty;
+            }
+        }
     }
 
-    private bool resetValueOnEmptyTextCategory;
-    private bool coerceTextCategory;
-    private bool coerceValueCategory;
-    private bool selectedOnTabCategory;
-
-
-    private string Subcategory = string.Empty;
-    private IEnumerable<string> Subcategories = ["Supermercado", "Refeições fora (restaurantes, lanches, delivery)"];
-
-    private async Task<IEnumerable<string>> SearchSubcategories(string value, CancellationToken token)
-    {
-        await Task.Delay(5, token);
-
-        if (string.IsNullOrWhiteSpace(value))
-            return Subcategories;
-
-        return Subcategories.Where(x => x.Contains(value, StringComparison.InvariantCultureIgnoreCase));
-    }
-
-    private bool resetValueOnEmptyTextSubcategory;
-    private bool coerceTextSubcategory;
-    private bool coerceValueSubcategory;
-    private bool selectedOnTabSubcategory;
+    private string Subcategory { get; set; } = string.Empty;
 
 
     private string PaymentMethod = string.Empty;
