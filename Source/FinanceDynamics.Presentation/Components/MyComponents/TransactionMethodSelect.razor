@@ -1,0 +1,47 @@
+﻿@using FinanceDynamics.Domain.Enums
+@using FinanceDynamics.Domain.Helpers
+
+<MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
+    <MudAutocomplete T="string"
+                     Label="Método de pagamento"
+                     Value="Value"
+                     ValueChanged="OnValueChanged"
+                     SearchFunc="SearchPaymentMethods"
+                     ResetValueOnEmptyText="@resetValueOnEmptyText"
+                     CoerceText="@coerceText"
+                     CoerceValue="@coerceValue"
+                     SelectValueOnTab="@selectOnTab" />
+</MudPaper>
+
+@code {
+    [Parameter] public string Value { get; set; } = string.Empty;
+    [Parameter] public EventCallback<string> ValueChanged { get; set; }
+
+    private IReadOnlyList<(TransactionMethod Value, string Description)> transactionMethods
+        = EnumHelper.GetValuesAndDescriptions<TransactionMethod>();
+
+    private bool resetValueOnEmptyText = false;
+    private bool coerceText = false;
+    private bool coerceValue = false;
+    private bool selectOnTab = false;
+
+    private async Task<IEnumerable<string>> SearchPaymentMethods(string value, CancellationToken token)
+    {
+        await Task.Delay(5, token);
+
+        var list = string.IsNullOrWhiteSpace(value)
+            ? transactionMethods.Select(x => x.Description)
+            : transactionMethods
+                .Where(item => item.Description
+                    .Contains(value, StringComparison.InvariantCultureIgnoreCase))
+                .Select(item => item.Description);
+
+        return list.ToList();
+    }
+
+    private async Task OnValueChanged(string newValue)
+    {
+        Value = newValue;
+        await ValueChanged.InvokeAsync(newValue);
+    }
+}

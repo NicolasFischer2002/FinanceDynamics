@@ -36,11 +36,9 @@
                            @bind-Value="Subcategory" />
     </MudItem>
     <MudItem xs="6">
-        <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
-            <MudAutocomplete T="string" Label="Método de pagamento" @bind-Value="PaymentMethod" SearchFunc="@SearchPaymentMethods"
-                             ResetValueOnEmptyText="@resetValueOnEmptyTextPaymentMethod"
-                             CoerceText="@coerceTextPaymentMethod" CoerceValue="@coerceValuePaymentMethod" SelectValueOnTab="@selectedOnTabPaymentMethod" />
-        </MudPaper>
+        <MudItem xs="6">
+            <TransactionMethodSelect @bind-Value="PaymentMethod" />
+        </MudItem>
     </MudItem>
     <MudItem xs="6">
         <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
@@ -79,29 +77,9 @@
     }
 
     private string Subcategory { get; set; } = string.Empty;
-
-
-    private string PaymentMethod = string.Empty;
-    private IEnumerable<string> PaymentMethods = ["Depósito", "PIX", "Cartão de crédito", "Cartão de débito"];
-
-    private async Task<IEnumerable<string>> SearchPaymentMethods(string value, CancellationToken token)
-    {
-        await Task.Delay(5, token);
-
-        if (string.IsNullOrWhiteSpace(value))
-            return PaymentMethods;
-
-        return PaymentMethods.Where(x => x.Contains(value, StringComparison.InvariantCultureIgnoreCase));
-    }
-
-    private bool resetValueOnEmptyTextPaymentMethod;
-    private bool coerceTextPaymentMethod;
-    private bool coerceValuePaymentMethod;
-    private bool selectedOnTabPaymentMethod;
-
+    private string PaymentMethod { get; set; } = string.Empty;
 
     private DateTime? Date = DateTime.Today;
-
 
     private FileUploader? _fileUploader;
 
