@@ -3,6 +3,7 @@
 @using System.Threading
 @using FinanceDynamics.Domain.Enums
 @using FinanceDynamics.Presentation.Components.MyComponents
+@inject ISnackbar Snackbar
 
 <PageTitle>Adicionar receita</PageTitle>
 
@@ -55,7 +56,7 @@
     </MudItem>
 </MudGrid>
 
-<MudButton Class="mt-6" Variant="Variant.Filled" Color="Color.Primary" FullWidth="true">Cadastrar</MudButton>
+<MudButton Class="mt-6" Variant="Variant.Filled" Color="Color.Primary" FullWidth="true" OnClick="Add">Cadastrar</MudButton>
 
 @code {
     private readonly CultureInfo _ptBR = CultureInfo.GetCultureInfo("pt-BR");
@@ -85,5 +86,21 @@
     private void OnFilesUpdated(List<IBrowserFile> files)
     {
 
+    }
+
+    private async Task Add()
+    {
+        try
+        {
+            await Task.Delay(500);
+
+            Snackbar.Clear();
+            Snackbar.Add($"Adicionado com sucesso!", Severity.Success);
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Clear();
+            Snackbar.Add($"Erro ao adicionar: {ex.Message}", Severity.Error);
+        }
     }
 }

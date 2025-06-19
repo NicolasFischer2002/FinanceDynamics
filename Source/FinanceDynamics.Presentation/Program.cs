@@ -4,12 +4,26 @@ using FinanceDynamics.Domain.Interfaces;
 using FinanceDynamics.Domain.Services;
 using FinanceDynamics.Domain.Validators;
 using FinanceDynamics.Presentation.Components;
+using MudBlazor;
 using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add MudBlazor services
-builder.Services.AddMudServices();
+builder.Services.AddMudServices(config =>
+{
+    config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.BottomLeft;
+
+    config.SnackbarConfiguration.PreventDuplicates = false;
+    config.SnackbarConfiguration.NewestOnTop = false;
+    config.SnackbarConfiguration.ShowCloseIcon = true;
+    config.SnackbarConfiguration.VisibleStateDuration = 5000;
+    config.SnackbarConfiguration.HideTransitionDuration = 350;
+    config.SnackbarConfiguration.ShowTransitionDuration = 350;
+    config.SnackbarConfiguration.SnackbarVariant = Variant.Text;
+    config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.TopEnd;
+});
+
 
 builder.Services.AddTransient(
     typeof(IValidateTransactionCategoryAndSubcategory<,>),

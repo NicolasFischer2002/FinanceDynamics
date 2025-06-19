@@ -1,7 +1,10 @@
 ﻿@inherits LayoutComponentBase
 @using FinanceDynamics.Presentation.Components.MyComponents
+@inject ISnackbar Snackbar
 
 <MudPopoverProvider />
+<MudSnackbarProvider />
+<MudSnackbarElement />
 
 <MudThemeProvider Theme="@_theme" IsDarkMode="_isDarkMode" />
 <MudLayout>
@@ -28,7 +31,6 @@
                 <MudNavLink Href="ViewExpenses" Icon="@Icons.Material.Filled.Search">Consultar</MudNavLink>
             </MudNavGroup>
         </MudNavMenu>
-        
     </MudDrawer>
     <MudMainContent Class="mt-16 pa-4">
         @Body
