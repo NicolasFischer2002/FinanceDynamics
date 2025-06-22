@@ -38,7 +38,7 @@ namespace FinanceDynamics.Domain.Helpers
                     return (T)field.GetValue(null)!;
             }
 
-            throw new ArgumentException($"Descrição '{description}' não encontrada no enum {type.Name}.");
+            throw new ArgumentException($"Descrição '{description}' não encontrada em {type.Name}.");
         }
     }
 }

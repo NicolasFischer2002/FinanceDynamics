@@ -6,6 +6,7 @@
 @using FinanceDynamics.Domain.Enums
 @using FinanceDynamics.Domain.ValueObjects
 @using FinanceDynamics.Presentation.Components.MyComponents
+@using FinanceDynamics.Domain.Exceptions
 @inject ISnackbar Snackbar
 @inject IIncomeFactory IIncomeFactory
 
@@ -99,13 +100,10 @@
     {
         try
         {
-            // Berlim => Criar DomainException e implementar métodos de validação nas classes.
-            // => Talvez seja interessante adicionar o "GetTransactionReceipt()" dentro do componente de arquivo.
-
             await Task.Delay(250);
 
             decimal value = _valueBr ?? 0m;
-            TransactionReceipt? transactionReceipt = await GetTransactionReceipt();
+            TransactionReceipt? transactionReceipt = _fileUploader is not null ? await _fileUploader.GetReceiptAsync() : null;
 
             Income income = IIncomeFactory.Create(
                 value,
@@ -120,25 +118,15 @@
             Snackbar.Clear();
             Snackbar.Add($"Adicionado com sucesso!", Severity.Success);
         }
+        catch (DomainException ex)
+        {
+            Snackbar.Clear();
+            Snackbar.Add($"{ex.Message}", Severity.Error);
+        }
         catch (Exception ex)
         {
             Snackbar.Clear();
-            Snackbar.Add($"Erro ao adicionar: {ex.Message}", Severity.Error);
+            Snackbar.Add($"Erro inesperado: {ex.Message}", Severity.Error);
         }
-    }
-
-    private async ValueTask<TransactionReceipt?> GetTransactionReceipt()
-    {
-        TransactionReceipt? transactionReceipt = null;
-        if (_fileUploader?.Files?.Count > 0)
-        {
-            var browserFile = _fileUploader.Files[0];
-            await using var stream = browserFile.OpenReadStream(long.MaxValue);
-            using var ms = new MemoryStream();
-            await stream.CopyToAsync(ms);
-            transactionReceipt = new TransactionReceipt(browserFile.Name, ms.ToArray());
-        }
-
-        return transactionReceipt;
     }
 }

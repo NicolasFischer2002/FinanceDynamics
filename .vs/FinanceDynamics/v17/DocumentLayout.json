@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Desenvolvimento\\FinanceDynamics\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9595487E-50EF-48D9-A09B-1D2A1185F60F}|Source\\FinanceDynamics.Domain\\FinanceDynamics.Domain.csproj|c:\\desenvolvimento\\financedynamics\\source\\financedynamics.domain\\valueobjects\\money.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9595487E-50EF-48D9-A09B-1D2A1185F60F}|Source\\FinanceDynamics.Domain\\FinanceDynamics.Domain.csproj|solutionrelative:source\\financedynamics.domain\\valueobjects\\money.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\source\\financedynamics.presentation\\components\\pages\\addincome.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:source\\financedynamics.presentation\\components\\pages\\addincome.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -22,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AddIncome.razor",
               "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddIncome.razor",
               "RelativeDocumentMoniker": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddIncome.razor",
               "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddIncome.razor",
               "RelativeToolTip": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddIncome.razor",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAAwGYAAABxAAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAG0AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-17T23:09:24.362Z",
               "IsPinned": true,
@@ -40,13 +44,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AddExpense.razor",
               "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddExpense.razor",
               "RelativeDocumentMoniker": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddExpense.razor",
               "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddExpense.razor",
               "RelativeToolTip": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\AddExpense.razor",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAFoAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-17T23:09:25.213Z",
               "IsPinned": true,
@@ -54,15 +58,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TransactionDescriptionInput.razor",
               "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\MyComponents\\TransactionDescriptionInput.razor",
               "RelativeDocumentMoniker": "Source\\FinanceDynamics.Presentation\\Components\\MyComponents\\TransactionDescriptionInput.razor",
               "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\MyComponents\\TransactionDescriptionInput.razor",
               "RelativeToolTip": "Source\\FinanceDynamics.Presentation\\Components\\MyComponents\\TransactionDescriptionInput.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-22T14:49:08.809Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Money.cs",
+              "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Domain\\ValueObjects\\Money.cs",
+              "RelativeDocumentMoniker": "Source\\FinanceDynamics.Domain\\ValueObjects\\Money.cs",
+              "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Domain\\ValueObjects\\Money.cs",
+              "RelativeToolTip": "Source\\FinanceDynamics.Domain\\ValueObjects\\Money.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:17:28.284Z",
               "IsPinned": true,
               "EditorCaption": ""
             },

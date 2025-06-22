@@ -1,4 +1,6 @@
-﻿<MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
+﻿@using FinanceDynamics.Domain.ValueObjects
+
+<MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
     <MudFileUpload T="IBrowserFile"
                    FilesChanged="HandleFileUpload">
         <ActivatorContent>
@@ -30,9 +32,19 @@
     [Parameter]
     public EventCallback<List<IBrowserFile>> FilesChanged { get; set; }
 
-    public IReadOnlyList<IBrowserFile> Files => _files;
-
     private List<IBrowserFile> _files = new();
+
+    public async ValueTask<TransactionReceipt?> GetReceiptAsync()
+    {
+        if (!_files.Any())
+            return null;
+
+        var browserFile = _files[0];
+        await using var stream = browserFile.OpenReadStream(long.MaxValue);
+        using var ms = new MemoryStream();
+        await stream.CopyToAsync(ms);
+        return new TransactionReceipt(browserFile.Name, ms.ToArray());
+    }
 
     private async Task HandleFileUpload(IBrowserFile file)
     {
@@ -42,7 +54,6 @@
         _files.Clear();
         _files.Add(file);
 
-        // Notify parent component.
         if (FilesChanged.HasDelegate)
             await FilesChanged.InvokeAsync(_files);
     }

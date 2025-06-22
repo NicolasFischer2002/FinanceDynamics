@@ -1,12 +1,29 @@
-﻿namespace FinanceDynamics.Domain.ValueObjects
+﻿using FinanceDynamics.Domain.Exceptions;
+using System.Globalization;
+
+namespace FinanceDynamics.Domain.ValueObjects
 {
-    public sealed class Money
+    public sealed record Money
     {
-        private decimal Value { get; set; }
+        public decimal Value { get; }
 
         public Money(decimal value)
         {
+            ValidateValue(value);
             Value = value;
+        }
+
+        private void ValidateValue(decimal value)
+        {
+            const decimal MinimumValue = 0.01m;
+
+            if (value < MinimumValue)
+                throw new DomainException($"O valor da transação deve ser maior que R$ {MinimumValue}.", value.ToString());
+        }
+
+        public string GetFormattedValue()
+        {
+            return Value.ToString("C2", CultureInfo.GetCultureInfo("pt-BR"));
         }
 
         public override string ToString()

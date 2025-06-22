@@ -1,7 +1,7 @@
 ﻿
 namespace FinanceDynamics.Domain.Exceptions
 {
-    internal class DomainException : CustomException<string>
+    public class DomainException : CustomException<string>
     {
         public DomainException(string message, string invalidValue) 
             : base(message, invalidValue)
