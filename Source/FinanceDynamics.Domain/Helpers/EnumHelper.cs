@@ -23,5 +23,22 @@ namespace FinanceDynamics.Domain.Helpers
                 })
                 .ToList();
         }
+
+        public static T GetValueFromDescription<T>(string description)
+            where T : Enum
+        {
+            var type = typeof(T);
+            foreach (var field in type.GetFields(BindingFlags.Public | BindingFlags.Static))
+            {
+                var attr = field.GetCustomAttribute<DescriptionAttribute>();
+                if (attr != null && attr.Description == description)
+                    return (T)field.GetValue(null)!;
+                
+                if (attr == null && field.Name.Equals(description, StringComparison.InvariantCultureIgnoreCase))
+                    return (T)field.GetValue(null)!;
+            }
+
+            throw new ArgumentException($"Descrição '{description}' não encontrada no enum {type.Name}.");
+        }
     }
 }

@@ -1,9 +1,13 @@
 ﻿@page "/AddIncome"
 @using System.Globalization
 @using System.Threading
+@using FinanceDynamics.Application.Interfaces
+@using FinanceDynamics.Domain.Entities
 @using FinanceDynamics.Domain.Enums
+@using FinanceDynamics.Domain.ValueObjects
 @using FinanceDynamics.Presentation.Components.MyComponents
 @inject ISnackbar Snackbar
+@inject IIncomeFactory IIncomeFactory
 
 <PageTitle>Adicionar receita</PageTitle>
 
@@ -46,9 +50,10 @@
         </MudPaper>
     </MudItem>
     <MudItem xs="12">
-        <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4">
-            <MudTextField T="string" MaxLength="250" HelperText="Opcional" Immediate="true" Label="Descrição" Variant="Variant.Text" />
-        </MudPaper>
+        <TransactionDescriptionInput Label="Observações"
+                  MaxLength="150"
+                  HelperText="Campo opcional"
+                  @bind-Value="Description" />
     </MudItem>
     <MudItem xs="12">
         <FileUploader @ref="_fileUploader"
@@ -88,11 +93,29 @@
 
     }
 
+    private string Description { get; set; } = string.Empty;
+
     private async Task Add()
     {
         try
         {
-            await Task.Delay(500);
+            // Berlim => Criar DomainException e implementar métodos de validação nas classes.
+            // => Talvez seja interessante adicionar o "GetTransactionReceipt()" dentro do componente de arquivo.
+
+            await Task.Delay(250);
+
+            decimal value = _valueBr ?? 0m;
+            TransactionReceipt? transactionReceipt = await GetTransactionReceipt();
+
+            Income income = IIncomeFactory.Create(
+                value,
+                Category, 
+                Subcategory, 
+                PaymentMethod, 
+                DateTime.Now, 
+                Description,
+                transactionReceipt
+            );
 
             Snackbar.Clear();
             Snackbar.Add($"Adicionado com sucesso!", Severity.Success);
@@ -102,5 +125,20 @@
             Snackbar.Clear();
             Snackbar.Add($"Erro ao adicionar: {ex.Message}", Severity.Error);
         }
+    }
+
+    private async ValueTask<TransactionReceipt?> GetTransactionReceipt()
+    {
+        TransactionReceipt? transactionReceipt = null;
+        if (_fileUploader?.Files?.Count > 0)
+        {
+            var browserFile = _fileUploader.Files[0];
+            await using var stream = browserFile.OpenReadStream(long.MaxValue);
+            using var ms = new MemoryStream();
+            await stream.CopyToAsync(ms);
+            transactionReceipt = new TransactionReceipt(browserFile.Name, ms.ToArray());
+        }
+
+        return transactionReceipt;
     }
 }

@@ -15,5 +15,15 @@ namespace FinanceDynamics.Application.Interfaces
             TransactionDescription? description = null,
             TransactionReceipt? receipt = null
         );
+
+        Income Create(
+            decimal value,
+            string category,
+            string? subcategory,
+            string method,
+            DateTime date,
+            string? description = null,
+            TransactionReceipt? receipt = null
+        );
     }
 }

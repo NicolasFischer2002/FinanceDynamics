@@ -1,6 +1,7 @@
 ﻿using FinanceDynamics.Application.Interfaces;
 using FinanceDynamics.Domain.Entities;
 using FinanceDynamics.Domain.Enums;
+using FinanceDynamics.Domain.Helpers;
 using FinanceDynamics.Domain.Interfaces;
 using FinanceDynamics.Domain.ValueObjects;
 
@@ -22,8 +23,7 @@ namespace FinanceDynamics.Application.Factories
             TransactionMethod method,
             DateTime date,
             TransactionDescription? description = null,
-            TransactionReceipt? receipt = null
-        )
+            TransactionReceipt? receipt = null)
         {
             _validator.Validate(category, subcategory);
 
@@ -34,6 +34,33 @@ namespace FinanceDynamics.Application.Factories
                 method,
                 date,
                 description,
+                receipt
+            );
+        }
+
+        public Income Create(
+            decimal value, 
+            string category, 
+            string? subcategory, 
+            string method, 
+            DateTime date, 
+            string? description = null, 
+            TransactionReceipt? receipt = null)
+        {
+            Money money = new Money(value);
+            IncomeCategory incomeCategory = new IncomeCategory(category);
+            IncomeSubcategory? subCategoryIncome = 
+                subcategory != null ? new IncomeSubcategory(subcategory, incomeCategory) : null;
+            TransactionMethod transactionMethod = EnumHelper.GetValueFromDescription<TransactionMethod>(method);
+            TransactionDescription? descriptionIncome = description != null ? new TransactionDescription(description) : null;
+
+            return new Income(
+                money, 
+                incomeCategory, 
+                subCategoryIncome, 
+                transactionMethod, 
+                date, 
+                descriptionIncome, 
                 receipt
             );
         }
