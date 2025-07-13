@@ -500,7 +500,8 @@
       },
       "FinanceDynamics.Application/1.0.0": {
         "dependencies": {
-          "FinanceDynamics.Domain": "1.0.0"
+          "FinanceDynamics.Domain": "1.0.0",
+          "FinanceDynamics.Infrastructure": "1.0.0"
         },
         "runtime": {
           "FinanceDynamics.Application.dll": {

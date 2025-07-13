@@ -26,3 +26,5 @@ C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Application\bin\Debug\
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Application\bin\Debug\net8.0\FinanceDynamics.Domain.pdb
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Application\obj\Debug\net8.0\FinanceDynamics.Application.csproj.AssemblyReference.cache
 C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Application\obj\Debug\net8.0\FinanceD.6C769986.Up2Date
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Application\bin\Debug\net8.0\FinanceDynamics.Infrastructure.dll
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Application\bin\Debug\net8.0\FinanceDynamics.Infrastructure.pdb

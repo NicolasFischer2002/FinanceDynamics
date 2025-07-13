@@ -35,6 +35,9 @@
             "projectReferences": {
               "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Domain\\FinanceDynamics.Domain.csproj": {
                 "projectPath": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Domain\\FinanceDynamics.Domain.csproj"
+              },
+              "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Infrastructure\\FinanceDynamics.Infrastructure.csproj": {
+                "projectPath": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Infrastructure\\FinanceDynamics.Infrastructure.csproj"
               }
             }
           }
