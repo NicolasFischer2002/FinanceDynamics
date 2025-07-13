@@ -32,3 +32,5 @@ C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Infrastru
 C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Infrastructure\obj\Debug\net8.0\refint\FinanceDynamics.Infrastructure.dll
 C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Infrastructure\obj\Debug\net8.0\FinanceDynamics.Infrastructure.pdb
 C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Infrastructure\obj\Debug\net8.0\ref\FinanceDynamics.Infrastructure.dll
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\bin\Debug\net8.0\FinanceDynamics.Infrastructure.runtimeconfig.json
+C:\Desenvolvimento\FinanceDynamics\Source\FinanceDynamics.Infrastructure\obj\Debug\net8.0\FinanceDynamics.Infrastructure.genruntimeconfig.cache

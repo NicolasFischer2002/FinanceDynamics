@@ -3,11 +3,18 @@ using FinanceDynamics.Application.Interfaces;
 using FinanceDynamics.Domain.Interfaces;
 using FinanceDynamics.Domain.Services;
 using FinanceDynamics.Domain.Validators;
+using FinanceDynamics.Infrastructure.Data;
 using FinanceDynamics.Presentation.Components;
+using Microsoft.EntityFrameworkCore;
 using MudBlazor;
 using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// EF Core
+var connectionString = builder.Configuration.GetConnectionString("Default");
+    builder.Services.AddDbContext<FinanceDbContext>(options =>
+    options.UseSqlite(connectionString));
 
 // Add MudBlazor services
 builder.Services.AddMudServices(config =>
