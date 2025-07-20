@@ -4,6 +4,7 @@ using FinanceDynamics.Domain.Interfaces;
 using FinanceDynamics.Domain.Services;
 using FinanceDynamics.Domain.Validators;
 using FinanceDynamics.Infrastructure.Data;
+using FinanceDynamics.Infrastructure.Repositories;
 using FinanceDynamics.Presentation.Components;
 using Microsoft.EntityFrameworkCore;
 using MudBlazor;
@@ -45,6 +46,9 @@ builder.Services.AddTransient<ITransactionSubcategoryService, TransactionSubcate
 builder.Services.AddTransient<IExpenseFactory, ExpenseFactory>();
 builder.Services.AddTransient<IIncomeFactory, IncomeFactory>();
 
+// Repositories
+builder.Services.AddTransient<IIncomeRepository, IncomeRepository>();
+
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
@@ -55,7 +59,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 

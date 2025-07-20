@@ -40,5 +40,17 @@ namespace FinanceDynamics.Domain.Helpers
 
             throw new ArgumentException($"Descrição '{description}' não encontrada em {type.Name}.");
         }
+
+        public static T GetValueFromName<T>(string name, bool ignoreCase = true)
+        where T : struct, Enum
+        {
+            if (Enum.TryParse<T>(name, ignoreCase, out var value))
+                return value;
+
+            throw new ArgumentException(
+                $"Nome '{name}' não corresponde a nenhum valor do enum {typeof(T).Name}.",
+                nameof(name)
+            );
+        }
     }
 }

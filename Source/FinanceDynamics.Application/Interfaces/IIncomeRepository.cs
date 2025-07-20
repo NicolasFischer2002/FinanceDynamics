@@ -1,4 +1,4 @@
-﻿using FinanceDynamics.Infrastructure.Data.Entities;
+﻿using FinanceDynamics.Domain.Entities;
 using FinanceDynamics.Infrastructure.ValueObjects;
 
 namespace FinanceDynamics.Application.Interfaces
