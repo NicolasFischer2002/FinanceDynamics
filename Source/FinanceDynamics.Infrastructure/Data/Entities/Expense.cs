@@ -17,7 +17,7 @@ public partial class Expense
 
     public string Method { get; set; } = null!;
 
-    public string DateTime { get; set; } = null!;
+    public DateTime DateTime { get; set; }
 
     public string? Description { get; set; }
 

@@ -1,4 +1,4 @@
-﻿namespace FinanceDynamics.Infrastructure.ValueObjects
+﻿namespace FinanceDynamics.Application.ValueObjects
 {
     public sealed record DateRange
     {

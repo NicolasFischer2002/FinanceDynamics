@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS Expenses (
     Category     TEXT       NOT NULL,
     Subcategory  TEXT,
     Method       TEXT       NOT NULL,
-    DateTime     TEXT       NOT NULL,    -- armazenar em ISO‑8601, ex: '2025-07-13T11:00:00'
+    DateTime     DATETIME   NOT NULL,    -- tipo DATETIME para affinity de data
     Description  TEXT
 );
 
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS Incomes (
     Category     TEXT       NOT NULL,
     Subcategory  TEXT,
     Method       TEXT       NOT NULL,
-    DateTime     TEXT       NOT NULL,    -- ISO‑8601
+    DateTime     DATETIME   NOT NULL,    -- aqui também
     Description  TEXT
 );
 

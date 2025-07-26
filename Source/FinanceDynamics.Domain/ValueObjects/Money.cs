@@ -1,5 +1,4 @@
 ﻿using FinanceDynamics.Domain.Exceptions;
-using System.Globalization;
 
 namespace FinanceDynamics.Domain.ValueObjects
 {
@@ -19,11 +18,6 @@ namespace FinanceDynamics.Domain.ValueObjects
 
             if (value < MinimumValue)
                 throw new DomainException($"O valor da transação deve ser maior que R$ {MinimumValue}.", value.ToString());
-        }
-
-        public string GetFormattedValue()
-        {
-            return Value.ToString("C2", CultureInfo.GetCultureInfo("pt-BR"));
         }
 
         public override string ToString()

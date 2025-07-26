@@ -1,11 +1,14 @@
 ﻿@page "/"
 @using FinanceDynamics.Presentation.Components.MyComponents
+@using FinanceDynamics.Application.Interfaces
+@using FinanceDynamics.Application.Services
+@inject IIncomeRepository IIncomeRepository
 
 <PageTitle>Home</PageTitle>
 
 <MudGrid Justify="Justify.Center" Spacing="2">
     <MudItem xs="12" sm="4" md="4">
-        <CustomCard Title="Receitas" Content="R$ 10.000,00" BackgroundColor="#72AC54" TextColor="#FFFFFF" />
+        <CustomCard Title="Receitas" Content="@IncomeDisplay" BackgroundColor="#72AC54" TextColor="#FFFFFF" />
     </MudItem>
     <MudItem xs="12" sm="4" md="4">
         <CustomCard Title="Despesas" Content="R$ 4.000,00" BackgroundColor="#5695EF" TextColor="#FFFFFF" />
@@ -30,4 +33,23 @@
 
     private double[] ExpenseData = [2000, 2000, 2000];
     private string[] ExpenseLabels = ["Transporte", "Alimentação", "Lazer"];
+
+    private string IncomeDisplay = "R$ 0,00";
+
+    protected override async Task OnInitializedAsync()
+    {
+        var today = DateTime.Today;
+        var startOfMonth = new DateTime(today.Year, today.Month, 1);
+        var endOfMonth = startOfMonth.AddMonths(1).AddDays(-1);
+
+        var range = new FinanceDynamics.Application.ValueObjects.DateRange(startOfMonth, endOfMonth);
+
+        await LoadTotalIncome(range);
+    }
+
+    public async Task LoadTotalIncome(FinanceDynamics.Application.ValueObjects.DateRange range)
+    {
+        decimal totalIncome = await IIncomeRepository.GetIncomeValueByDateRange(range);
+        IncomeDisplay = MoneyFormatter.Format(totalIncome);
+    }
 }

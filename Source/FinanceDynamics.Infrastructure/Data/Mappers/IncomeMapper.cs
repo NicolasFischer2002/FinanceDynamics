@@ -10,7 +10,7 @@ namespace FinanceDynamics.Infrastructure.Data.Mappers
         public static Domain.Entities.Income ToDomain(Entities.Income income)
         {
             var money = new Money((decimal)income.Value);
-            var date = DateTime.Parse(income.DateTime);
+            var date = income.DateTime;
             var description = income.Description is null
                 ? new TransactionDescription(string.Empty)
                 : new TransactionDescription(income.Description);
@@ -56,7 +56,7 @@ namespace FinanceDynamics.Infrastructure.Data.Mappers
                 Category = income.Category.Name,         
                 Subcategory = income.Subcategory?.Name,
                 Method = income.Method.ToString(),
-                DateTime = income.Date.ToString("yyyy-MM-dd"),
+                DateTime = income.Date,
                 Description = income.Description?.ToString(),
                 IncomeTransactionReceipts = receipts
             };
