@@ -9,6 +9,7 @@
 @using FinanceDynamics.Domain.Exceptions
 @inject ISnackbar Snackbar
 @inject IIncomeFactory IIncomeFactory
+@inject IIncomeRepository IIncomeRepository
 
 <PageTitle>Adicionar receita</PageTitle>
 
@@ -114,6 +115,8 @@
                 Description,
                 transactionReceipt
             );
+
+            await IIncomeRepository.AddAsync(income);
 
             Snackbar.Clear();
             Snackbar.Add($"Adicionado com sucesso!", Severity.Success);

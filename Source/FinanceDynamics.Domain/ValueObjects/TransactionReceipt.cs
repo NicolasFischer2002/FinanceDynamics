@@ -42,5 +42,15 @@ namespace FinanceDynamics.Domain.ValueObjects
                     "Arquivo da transação"
                 );
         }
+
+        public string GetNameFile()
+        {
+            return Name;
+        }
+
+        public byte[] GetFile()
+        {
+            return File;
+        }
     }
 }

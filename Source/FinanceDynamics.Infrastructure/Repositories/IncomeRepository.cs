@@ -1,6 +1,7 @@
 ﻿using FinanceDynamics.Application.Interfaces;
 using FinanceDynamics.Domain.Entities;
 using FinanceDynamics.Infrastructure.Data;
+using FinanceDynamics.Infrastructure.Data.Mappers;
 using FinanceDynamics.Infrastructure.ValueObjects;
 
 namespace FinanceDynamics.Infrastructure.Repositories
@@ -14,9 +15,12 @@ namespace FinanceDynamics.Infrastructure.Repositories
             _context = context;
         }
 
-        public Task AddAsync(Income income) // Berlim
+        public async Task AddAsync(Income income)
         {
-            throw new NotImplementedException();
+            Data.Entities.Income incomeData = IncomeMapper.ToData(income);
+            _context.Incomes.Add(incomeData);
+
+            await _context.SaveChangesAsync();
         }
 
         public Task DeleteAsync(int id)

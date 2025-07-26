@@ -1,16 +1,17 @@
 ﻿using FinanceDynamics.Domain.Enums;
 using FinanceDynamics.Domain.Helpers;
 using FinanceDynamics.Domain.ValueObjects;
+using FinanceDynamics.Infrastructure.Data.Entities;
 
 namespace FinanceDynamics.Infrastructure.Data.Mappers
 {
     public static class IncomeMapper
     {
-        public static Domain.Entities.Income ToDomain(Infrastructure.Data.Entities.Income income)
+        public static Domain.Entities.Income ToDomain(Entities.Income income)
         {
             var money = new Money((decimal)income.Value);
             var date = DateTime.Parse(income.DateTime);
-            var description = income.Description is null 
+            var description = income.Description is null
                 ? new TransactionDescription(string.Empty)
                 : new TransactionDescription(income.Description);
 
@@ -32,6 +33,33 @@ namespace FinanceDynamics.Infrastructure.Data.Mappers
             );
 
             return domain;
+        }
+
+        public static Entities.Income ToData(Domain.Entities.Income income)
+        {
+            var receipts = new List<IncomeTransactionReceipt>();
+
+            if (income.Receipt is not null)
+            {
+                receipts.Add(new IncomeTransactionReceipt
+                {
+                    GuidId = income.Id.ToString(),
+                    Name = income.Receipt.GetNameFile(),
+                    File = income.Receipt.GetFile()
+                });
+            }
+
+            return new Entities.Income
+            {
+                GuidId = income.Id.ToString(),
+                Value = (double)income.Value.GetValue(),
+                Category = income.Category.Name,         
+                Subcategory = income.Subcategory?.Name,
+                Method = income.Method.ToString(),
+                DateTime = income.Date.ToString("yyyy-MM-dd"),
+                Description = income.Description?.ToString(),
+                IncomeTransactionReceipts = receipts
+            };
         }
     }
 }
