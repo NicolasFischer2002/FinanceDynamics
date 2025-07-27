@@ -10,6 +10,7 @@
         public static readonly ExpenseCategory Housing = new("Moradia");
         public static readonly ExpenseCategory Health = new("Saúde");
         public static readonly ExpenseCategory Insurance = new("Seguros");
+        public static readonly ExpenseCategory Transport = new("Transporte");
         public static readonly ExpenseCategory ClothingAndFootwear = new("Vestuário e Calçados");
         public static readonly ExpenseCategory Others = new("Outros");
 

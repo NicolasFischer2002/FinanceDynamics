@@ -1,9 +1,14 @@
 ﻿@page "/AddExpense"
 @using System.Globalization
 @using System.Threading
+@using FinanceDynamics.Domain.Entities
 @using FinanceDynamics.Domain.Enums
+@using FinanceDynamics.Domain.ValueObjects
 @using FinanceDynamics.Presentation.Components.MyComponents
+@using FinanceDynamics.Application.Interfaces
 @inject ISnackbar Snackbar
+@inject IExpenseFactory IExpenseFactory
+@inject IExpenseRepository IExpenseRepository
 
 <PageTitle>Adicionar despesa</PageTitle>
 
@@ -94,7 +99,20 @@
     {
         try
         {
-            await Task.Delay(500);
+            decimal value = _valueBr ?? 0m;
+            TransactionReceipt? transactionReceipt = _fileUploader is not null ? await _fileUploader.GetReceiptAsync() : null;
+
+            Expense expense = IExpenseFactory.Create(
+                value,
+                Category,
+                Subcategory,
+                PaymentMethod,
+                DateTime.Now,
+                Description,
+                transactionReceipt
+            );
+
+            await IExpenseRepository.AddAsync(expense);
 
             Snackbar.Clear();
             Snackbar.Add($"Adicionado com sucesso!", Severity.Success);

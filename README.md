@@ -29,7 +29,7 @@ Este repositório é ideal para desenvolvedores que estudam ou querem aplicar:
 | 🎨 MudBlazor             | UI moderna e responsiva           |
 | 🧪 MSTest                | Testes unitários                  |
 | 🧰 Visual Studio 2022    | IDE utilizada para desenvolvimento|
-
+| 🏠 GitHub Desktop        | Cliente Git com interface gráfica |    
 ---
 
 ## 🧠 Conceitos Aplicados

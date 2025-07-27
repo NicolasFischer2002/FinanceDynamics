@@ -519,6 +519,7 @@
       },
       "FinanceDynamics.Infrastructure/1.0.0": {
         "dependencies": {
+          "FinanceDynamics.Application": "1.0.0",
           "FinanceDynamics.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.7",
           "Microsoft.EntityFrameworkCore.Sqlite.Core": "9.0.7",

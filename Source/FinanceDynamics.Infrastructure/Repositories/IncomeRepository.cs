@@ -4,7 +4,6 @@ using FinanceDynamics.Domain.Entities;
 using FinanceDynamics.Infrastructure.Data;
 using FinanceDynamics.Infrastructure.Data.Mappers;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace FinanceDynamics.Infrastructure.Repositories
 {

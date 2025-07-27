@@ -31,6 +31,9 @@
         public static readonly ExpenseSubcategory VehicleInsurance = new("Seguro Veicular", ExpenseCategory.Insurance);
         public static readonly ExpenseSubcategory HomeInsurance = new("Seguro Residencial", ExpenseCategory.Insurance);
 
+        public static readonly ExpenseSubcategory PublicTransportation = new ("Transporte público", ExpenseCategory.Transport);
+        public static readonly ExpenseSubcategory TransportOwnVehicle = new("Veículo próprio", ExpenseCategory.Transport);
+
         public static readonly ExpenseSubcategory Clothing = new("Roupas", ExpenseCategory.ClothingAndFootwear);
         public static readonly ExpenseSubcategory Footwear = new("Calçados", ExpenseCategory.ClothingAndFootwear);
 

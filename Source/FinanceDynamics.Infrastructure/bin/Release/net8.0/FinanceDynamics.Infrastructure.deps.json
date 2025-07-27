@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "FinanceDynamics.Infrastructure/1.0.0": {
         "dependencies": {
+          "FinanceDynamics.Application": "1.0.0",
           "FinanceDynamics.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.7",
           "Microsoft.EntityFrameworkCore.Design": "9.0.7",
@@ -815,6 +816,17 @@
         }
       },
       "System.Threading.Channels/7.0.0": {},
+      "FinanceDynamics.Application/1.0.0": {
+        "dependencies": {
+          "FinanceDynamics.Domain": "1.0.0"
+        },
+        "runtime": {
+          "FinanceDynamics.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "FinanceDynamics.Domain/1.0.0": {
         "runtime": {
           "FinanceDynamics.Domain.dll": {
@@ -1173,6 +1185,11 @@
       "sha512": "sha512-qmeeYNROMsONF6ndEZcIQ+VxR4Q/TX/7uIVLJqtwIWL7dDWeh0l1UIqgo4wYyjG//5lUNhwkLDSFl+pAWO6oiA==",
       "path": "system.threading.channels/7.0.0",
       "hashPath": "system.threading.channels.7.0.0.nupkg.sha512"
+    },
+    "FinanceDynamics.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "FinanceDynamics.Domain/1.0.0": {
       "type": "project",

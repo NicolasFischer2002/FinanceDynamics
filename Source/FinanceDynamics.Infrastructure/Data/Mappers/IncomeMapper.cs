@@ -5,9 +5,9 @@ using FinanceDynamics.Infrastructure.Data.Entities;
 
 namespace FinanceDynamics.Infrastructure.Data.Mappers
 {
-    public static class IncomeMapper
+    internal static class IncomeMapper
     {
-        public static Domain.Entities.Income ToDomain(Entities.Income income)
+        internal static Domain.Entities.Income ToDomain(Entities.Income income)
         {
             var money = new Money((decimal)income.Value);
             var date = income.DateTime;
@@ -35,7 +35,7 @@ namespace FinanceDynamics.Infrastructure.Data.Mappers
             return domain;
         }
 
-        public static Entities.Income ToData(Domain.Entities.Income income)
+        internal static Entities.Income ToData(Domain.Entities.Income income)
         {
             var receipts = new List<IncomeTransactionReceipt>();
 

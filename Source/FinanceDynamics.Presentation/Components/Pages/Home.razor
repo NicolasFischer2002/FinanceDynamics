@@ -3,6 +3,8 @@
 @using FinanceDynamics.Application.Interfaces
 @using FinanceDynamics.Application.Services
 @inject IIncomeRepository IIncomeRepository
+@inject IExpenseRepository IExpenseRepository
+@inject IFinancialStatement IFinancialStatement
 
 <PageTitle>Home</PageTitle>
 
@@ -11,10 +13,10 @@
         <CustomCard Title="Receitas" Content="@IncomeDisplay" BackgroundColor="#72AC54" TextColor="#FFFFFF" />
     </MudItem>
     <MudItem xs="12" sm="4" md="4">
-        <CustomCard Title="Despesas" Content="R$ 4.000,00" BackgroundColor="#5695EF" TextColor="#FFFFFF" />
+        <CustomCard Title="Despesas" Content="@ExpenseDisplay" BackgroundColor="#5695EF" TextColor="#FFFFFF" />
     </MudItem>
     <MudItem xs="12" sm="4" md="4">
-        <CustomCard Title="Saldo" Content="R$ 6.000,00" BackgroundColor="#E7971C" TextColor="#FFFFFF" />
+        <CustomCard Title="Saldo" Content="@Balance" BackgroundColor="#E7971C" TextColor="#FFFFFF" />
     </MudItem>
 </MudGrid>
 
@@ -35,6 +37,8 @@
     private string[] ExpenseLabels = ["Transporte", "Alimentação", "Lazer"];
 
     private string IncomeDisplay = "R$ 0,00";
+    private string ExpenseDisplay = "R$ 0,00";
+    private string Balance = "R$ 0,00";
 
     protected override async Task OnInitializedAsync()
     {
@@ -45,11 +49,25 @@
         var range = new FinanceDynamics.Application.ValueObjects.DateRange(startOfMonth, endOfMonth);
 
         await LoadTotalIncome(range);
+        await LoadTotalExpense(range);
+        await LoadBalance(range);
     }
 
     public async Task LoadTotalIncome(FinanceDynamics.Application.ValueObjects.DateRange range)
     {
         decimal totalIncome = await IIncomeRepository.GetIncomeValueByDateRange(range);
         IncomeDisplay = MoneyFormatter.Format(totalIncome);
+    }
+
+    public async Task LoadTotalExpense(FinanceDynamics.Application.ValueObjects.DateRange range)
+    {
+        decimal totalExpense = await IExpenseRepository.GetExpenseValueByDateRange(range);
+        ExpenseDisplay = MoneyFormatter.Format(totalExpense);
+    }
+
+    public async Task LoadBalance(FinanceDynamics.Application.ValueObjects.DateRange range)
+    {
+        decimal balance = await IFinancialStatement.BalanceBetweenDates(range);
+        Balance = MoneyFormatter.Format(balance);
     }
 }

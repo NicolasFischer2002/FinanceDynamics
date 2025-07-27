@@ -48,6 +48,8 @@ builder.Services.AddTransient<IIncomeFactory, IncomeFactory>();
 
 // Repositories
 builder.Services.AddTransient<IIncomeRepository, IncomeRepository>();
+builder.Services.AddTransient<IExpenseRepository, ExpenseRepository>();
+builder.Services.AddTransient<IFinancialStatement, FinancialStatement>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
