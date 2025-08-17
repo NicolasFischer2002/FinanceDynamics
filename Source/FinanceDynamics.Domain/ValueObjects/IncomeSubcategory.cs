@@ -3,6 +3,8 @@
     public sealed record IncomeSubcategory : SubcategoryTransaction<IncomeCategory>
     {
         public static readonly IncomeSubcategory BaseSalary = new("Salário base", IncomeCategory.Salary);
+        public static readonly IncomeSubcategory ThirteenthSalary = new("Décimo terceiro salário", IncomeCategory.Salary);
+        public static readonly IncomeSubcategory Vacation = new("Férias", IncomeCategory.Salary);
         public static readonly IncomeSubcategory Overtime = new("Horas extras", IncomeCategory.Salary);
         public static readonly IncomeSubcategory Bonus = new("Bonificação", IncomeCategory.Salary);
 

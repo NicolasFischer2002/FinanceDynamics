@@ -51,6 +51,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNeUNvbXBvbmVudHNcVHJhbnNhY3Rpb25EZXNjcmlwdGlvbklucHV0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Desenvolvimento/FinanceDynamics/Source/FinanceDynamics.Presentation/Components/MyComponents/TransactionGrid.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNeUNvbXBvbmVudHNcVHJhbnNhY3Rpb25HcmlkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Desenvolvimento/FinanceDynamics/Source/FinanceDynamics.Presentation/Components/MyComponents/TransactionMethodSelect.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNeUNvbXBvbmVudHNcVHJhbnNhY3Rpb25NZXRob2RTZWxlY3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

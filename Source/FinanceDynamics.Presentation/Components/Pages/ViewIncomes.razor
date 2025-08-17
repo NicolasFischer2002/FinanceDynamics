@@ -1,9 +1,48 @@
 ﻿@page "/ViewIncomes"
+@using FinanceDynamics.Presentation.Components.MyComponents
+@using FinanceDynamics.Domain.Entities
+@using FinanceDynamics.Application.Interfaces
+@using FinanceDynamics.Presentation.DTOs
+@inject IIncomeRepository IIncomeRepository
 
 <PageTitle>Consultar receitas</PageTitle>
 
-<MudText Typo="Typo.h6" GutterBottom="true">Consultar receitas</MudText>
+<MudText Typo="Typo.h6" GutterBottom="true">Receitas</MudText>
+<TransactionGrid TransactionList="@Incomes"></TransactionGrid>
 
 @code {
+    private IEnumerable<TransactionDTO> Incomes { get; set; } = Array.Empty<TransactionDTO>();
 
+    protected override async Task OnInitializedAsync() 
+    {
+        var today = DateTime.Today;
+        var startOfMonth = new DateTime(today.Year, today.Month, 1);
+        var endOfMonth = startOfMonth.AddMonths(1).AddDays(-1);
+
+        var range = new FinanceDynamics.Application.ValueObjects.DateRange(startOfMonth, endOfMonth);
+        await FillInTransactionList(range);
+    }
+
+    private async Task FillInTransactionList(FinanceDynamics.Application.ValueObjects.DateRange range)
+    {
+        IReadOnlyList<Income>? incomes = await IIncomeRepository.GetIncomeByDateRange(range);
+
+        if (incomes is null || incomes.Count == 0)
+        {
+            Incomes = Array.Empty<TransactionDTO>();
+            return;
+        }
+
+        Incomes = incomes
+            .Select((tl, index )=> new TransactionDTO(
+                index + 1,
+                tl.Id,
+                tl.Value.GetValue(),
+                tl.Category.Name,
+                tl.Subcategory?.Name ?? string.Empty,
+                tl.Method.ToString(),
+                tl.Date,
+                tl.Description?.ToString()
+            ));
+    }
 }
