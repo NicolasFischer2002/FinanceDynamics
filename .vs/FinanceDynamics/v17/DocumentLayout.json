@@ -7,18 +7,6 @@
       "RelativeMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:source\\financedynamics.presentation\\components\\mycomponents\\transactiongrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\source\\financedynamics.presentation\\dtos\\transactiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:source\\financedynamics.presentation\\dtos\\transactiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9595487E-50EF-48D9-A09B-1D2A1185F60F}|Source\\FinanceDynamics.Domain\\FinanceDynamics.Domain.csproj|c:\\desenvolvimento\\financedynamics\\source\\financedynamics.domain\\entities\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9595487E-50EF-48D9-A09B-1D2A1185F60F}|Source\\FinanceDynamics.Domain\\FinanceDynamics.Domain.csproj|solutionrelative:source\\financedynamics.domain\\entities\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\source\\financedynamics.presentation\\components\\pages\\viewincomes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:source\\financedynamics.presentation\\components\\pages\\viewincomes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|c:\\desenvolvimento\\financedynamics\\source\\financedynamics.presentation\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{081D38EF-5A24-42AC-9BF1-13336AA6EC9F}|Source\\FinanceDynamics.Presentation\\FinanceDynamics.Presentation.csproj|solutionrelative:source\\financedynamics.presentation\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -30,33 +18,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\Home.razor",
               "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\Home.razor",
               "RelativeToolTip": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\Home.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAABlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-27T18:58:06.949Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ViewIncomes.razor",
-              "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\ViewIncomes.razor",
-              "RelativeDocumentMoniker": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\ViewIncomes.razor",
-              "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\Pages\\ViewIncomes.razor",
-              "RelativeToolTip": "Source\\FinanceDynamics.Presentation\\Components\\Pages\\ViewIncomes.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-17T18:49:35.172Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -68,42 +42,15 @@
               "RelativeDocumentMoniker": "Source\\FinanceDynamics.Presentation\\Components\\MyComponents\\TransactionGrid.razor",
               "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\Components\\MyComponents\\TransactionGrid.razor",
               "RelativeToolTip": "Source\\FinanceDynamics.Presentation\\Components\\MyComponents\\TransactionGrid.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABXAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACkAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-17T19:18:56.839Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TransactionDTO.cs",
-              "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\DTOs\\TransactionDTO.cs",
-              "RelativeDocumentMoniker": "Source\\FinanceDynamics.Presentation\\DTOs\\TransactionDTO.cs",
-              "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Presentation\\DTOs\\TransactionDTO.cs",
-              "RelativeToolTip": "Source\\FinanceDynamics.Presentation\\DTOs\\TransactionDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T19:01:20.489Z",
+              "WhenOpened": "2025-10-04T22:52:10.987Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Transaction.cs",
-              "DocumentMoniker": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Domain\\Entities\\Transaction.cs",
-              "RelativeDocumentMoniker": "Source\\FinanceDynamics.Domain\\Entities\\Transaction.cs",
-              "ToolTip": "C:\\Desenvolvimento\\FinanceDynamics\\Source\\FinanceDynamics.Domain\\Entities\\Transaction.cs",
-              "RelativeToolTip": "Source\\FinanceDynamics.Domain\\Entities\\Transaction.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T19:53:41.769Z",
-              "EditorCaption": ""
             }
           ]
         }
