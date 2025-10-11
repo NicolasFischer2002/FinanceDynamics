@@ -9,7 +9,7 @@ namespace FinanceDynamics.Application.Interfaces
         Task AddAsync(Expense expense);
         Task UpdateAsync(Expense expense);
         Task DeleteAsync(int id);
-        Task<IReadOnlyList<Expense>> GetIncomeByDateRange(DateRange dateRange);
+        Task<IReadOnlyList<Expense>> GetExpenseByDateRange(DateRange dateRange);
         Task<decimal> GetExpenseValueByDateRange(DateRange dateRange);
     }
 }

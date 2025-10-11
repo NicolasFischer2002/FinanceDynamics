@@ -39,7 +39,7 @@ namespace FinanceDynamics.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<IReadOnlyList<Expense>> GetIncomeByDateRange(DateRange dateRange)
+        public async Task<IReadOnlyList<Expense>> GetExpenseByDateRange(DateRange dateRange)
         {
             IReadOnlyList<Data.Entities.Expense> expenses = await _context.Expenses
                 .Where(e => e.DateTime >= dateRange.StartDate && e.DateTime <= dateRange.EndDate)

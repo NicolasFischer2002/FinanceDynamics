@@ -1,4 +1,6 @@
 ﻿@page "/"
+@using FinanceDynamics.Domain.Interfaces
+@using FinanceDynamics.Domain.Enums
 @using FinanceDynamics.Presentation.Components.MyComponents
 @using FinanceDynamics.Application.Interfaces
 @using FinanceDynamics.Application.Services
@@ -30,17 +32,22 @@
 </MudPaper>
 
 @code {
-    private double[] IncomeData = [2000, 4000, 4000];
-    private string[] IncomeLabels = ["Salário", "Devolução", "Dividendos"];
+    private double[] IncomeData = [];
+    private string[] IncomeLabels = [];
 
-    private double[] ExpenseData = [2000, 2000, 2000];
-    private string[] ExpenseLabels = ["Transporte", "Alimentação", "Lazer"];
+    private double[] ExpenseData = [];
+    private string[] ExpenseLabels = [];
 
-    private string IncomeDisplay = "R$ 0,00";
-    private string ExpenseDisplay = "R$ 0,00";
-    private string Balance = "R$ 0,00";
+    private string IncomeDisplay = string.Empty;
+    private string ExpenseDisplay = string.Empty;
+    private string Balance = string.Empty;
 
     protected override async Task OnInitializedAsync()
+    {
+        await LoadGraphicalInterface();
+    }
+
+    private async Task LoadGraphicalInterface()
     {
         var today = DateTime.Today;
         var startOfMonth = new DateTime(today.Year, today.Month, 1);
@@ -48,9 +55,39 @@
 
         var range = new FinanceDynamics.Application.ValueObjects.DateRange(startOfMonth, endOfMonth);
 
+        await LoadCharts(range);
+
         await LoadTotalIncome(range);
         await LoadTotalExpense(range);
         await LoadBalance(range);
+    }
+
+    private async Task LoadCharts(FinanceDynamics.Application.ValueObjects.DateRange range)
+    {
+        var incomes = await IIncomeRepository.GetIncomeByDateRange(range);
+        var expenses = await IExpenseRepository.GetExpenseByDateRange(range);
+
+        if (incomes.Count != 0)
+        {
+            IncomeData = GetAllIncomeValues(incomes);
+            IncomeLabels = GetAllIncomeLabels(incomes);
+        }
+        else
+        {
+            IncomeData = [1];
+            IncomeLabels = ["Cadastre receitas"];
+        }
+
+        if (expenses.Count != 0)
+        {
+            ExpenseData = GetAllExpenseValues(expenses);
+            ExpenseLabels = GetAllExpenseLabels(expenses);
+        }
+        else
+        {
+            ExpenseData = [1];
+            ExpenseLabels = ["Cadastre despesas"];
+        }
     }
 
     public async Task LoadTotalIncome(FinanceDynamics.Application.ValueObjects.DateRange range)
@@ -69,5 +106,39 @@
     {
         decimal balance = await IFinancialStatement.BalanceBetweenDates(range);
         Balance = MoneyFormatter.Format(balance);
+    }
+
+    private double[] GetAllIncomeValues(IReadOnlyList<Domain.Entities.Income> incomes)
+    {
+        incomes = incomes.DistinctBy(i => i.Category.Name).ToArray();
+
+        return incomes
+            .Select(i => (double)i.Value.Value)
+            .ToArray();
+    }
+
+    private string[] GetAllIncomeLabels(IReadOnlyList<Domain.Entities.Income> incomes)
+    {
+        return incomes
+            .Select(i => i.Category.Name)
+            .Distinct()
+            .ToArray();
+    }
+
+    private double[] GetAllExpenseValues(IReadOnlyList<Domain.Entities.Expense> expenses)
+    {
+        expenses = expenses.DistinctBy(i => i.Category.Name).ToArray();
+
+        return expenses
+            .Select(i => (double)i.Value.Value)
+            .ToArray();
+    }
+
+    private string[] GetAllExpenseLabels(IReadOnlyList<Domain.Entities.Expense> expense)
+    {
+        return expense
+            .Select(i => i.Category.Name)
+            .Distinct()
+            .ToArray();
     }
 }
