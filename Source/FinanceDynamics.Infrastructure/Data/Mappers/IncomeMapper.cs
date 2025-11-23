@@ -23,6 +23,7 @@ namespace FinanceDynamics.Infrastructure.Data.Mappers
                 : null;
 
             var domain = new Domain.Entities.Income(
+                income.GuidId,
                 money,
                 incomeCategory,
                 income.Subcategory is not null ? new IncomeSubcategory(income.Subcategory, incomeCategory) : null,

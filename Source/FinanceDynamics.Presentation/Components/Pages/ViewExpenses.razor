@@ -1,4 +1,5 @@
 ﻿@page "/ViewExpenses"
+@using FinanceDynamics.Domain.Enums
 @using FinanceDynamics.Presentation.Components.MyComponents
 @using FinanceDynamics.Domain.Entities
 @using FinanceDynamics.Application.Interfaces
@@ -9,7 +10,7 @@
 
 <MudText Typo="Typo.h6" GutterBottom="true">Consultar despesas</MudText>
 
-<TransactionGrid TransactionList="@Expenses"></TransactionGrid>
+<TransactionGrid TransactionList="@Expenses" TransactionType="TransactionType.Expense"></TransactionGrid>
 
 @code {
     private IEnumerable<TransactionDTO> Expenses { get; set; } = Array.Empty<TransactionDTO>();

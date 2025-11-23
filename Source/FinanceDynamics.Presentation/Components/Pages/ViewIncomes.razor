@@ -1,4 +1,5 @@
 ﻿@page "/ViewIncomes"
+@using FinanceDynamics.Domain.Enums
 @using FinanceDynamics.Presentation.Components.MyComponents
 @using FinanceDynamics.Domain.Entities
 @using FinanceDynamics.Application.Interfaces
@@ -8,7 +9,7 @@
 <PageTitle>Consultar receitas</PageTitle>
 
 <MudText Typo="Typo.h6" GutterBottom="true">Receitas</MudText>
-<TransactionGrid TransactionList="@Incomes"></TransactionGrid>
+<TransactionGrid TransactionList="@Incomes" TransactionType="TransactionType.Income"></TransactionGrid>
 
 @code {
     private IEnumerable<TransactionDTO> Incomes { get; set; } = Array.Empty<TransactionDTO>();

@@ -51,7 +51,11 @@
 </MudDataGrid>
 
 @code {
-    [Parameter] public IEnumerable<TransactionDTO> TransactionList { get; init; } = [];
+    [Parameter, EditorRequired]
+    public IEnumerable<TransactionDTO> TransactionList { get; init; } = [];
+    
+    [Parameter, EditorRequired]
+    public required TransactionType TransactionType { get; init; }
 
     private MudDataGrid<TransactionDTO> DataGrid = default!;
     private bool NaturalSortingEnabled = true;
@@ -73,7 +77,7 @@
 
     private async Task ViewReceipt(TransactionDTO transactionDTO)
     {
-        var file = await ITransactionReceiptService.GetReceipt(transactionDTO.GuidId, TransactionType.Expense);
+        var file = await ITransactionReceiptService.GetReceipt(transactionDTO.GuidId, TransactionType);
 
         if (file is null)
         {
