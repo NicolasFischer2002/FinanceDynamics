@@ -7,9 +7,9 @@ namespace FinanceDynamics.Domain.Services
 {
     public class TransactionCategoryService : ITransactionCategoryService
     {
-        public IEnumerable<string> GetCategories(TransactionKind kind)
+        public IEnumerable<string> GetCategories(TransactionType kind)
         {
-            var type = kind == TransactionKind.Expense
+            var type = kind == TransactionType.Expense
                 ? typeof(ExpenseCategory)
                 : typeof(IncomeCategory);
 

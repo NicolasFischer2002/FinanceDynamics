@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace FinanceDynamics.Infrastructure.Data.Entities;
+﻿namespace FinanceDynamics.Infrastructure.Data.Entities;
 
 public partial class IncomeTransactionReceipt
 {

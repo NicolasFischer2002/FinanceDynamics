@@ -32,13 +32,13 @@
         </MudPaper>
     </MudItem>
     <MudItem xs="4">
-        <CategorySelect Kind="TransactionKind.Income"
+        <CategorySelect Kind="TransactionType.Income"
                         Label="Categoria"
                         @bind-Value="Category" />
     </MudItem>
     <MudItem xs="4">
         <SubcategorySelect 
-          Kind="TransactionKind.Income"
+          Kind="TransactionType.Income"
           ParentCategory="@Category"    
           Label="Subcategoria"
           @bind-Value="Subcategory" />

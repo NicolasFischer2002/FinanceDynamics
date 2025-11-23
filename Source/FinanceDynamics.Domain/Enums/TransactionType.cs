@@ -1,6 +1,6 @@
 ﻿namespace FinanceDynamics.Domain.Enums
 {
-    public enum TransactionKind
+    public enum TransactionType
     {
         Expense,
         Income

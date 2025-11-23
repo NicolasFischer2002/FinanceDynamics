@@ -18,7 +18,7 @@ namespace FinanceDynamics.Presentation.DTOs
         {
             Id = id;
             GuidId = guidId.ToString();
-            Value = MoneyFormatter.Format(value);
+            Value = MoneyFormatterService.Format(value);
             Category = category;
             SubCategory = subCategory ?? string.Empty;
             TransactionMethod = transactionMethod;

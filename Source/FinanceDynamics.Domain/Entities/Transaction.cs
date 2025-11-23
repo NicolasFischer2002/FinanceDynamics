@@ -35,5 +35,26 @@ namespace FinanceDynamics.Domain.Entities
             Description = description;
             Receipt = receipt;
         }
+
+        protected Transaction(
+            string id,
+            Money value,
+            TCategory category,
+            TSubcategory? subcategory,
+            TransactionMethod method,
+            DateTime date,
+            TransactionDescription? description = null,
+            TransactionReceipt? receipt = null)
+        {
+
+            Id = Guid.Parse(id);
+            Value = value;
+            Category = category;
+            Subcategory = subcategory;
+            Method = method;
+            Date = date;
+            Description = description;
+            Receipt = receipt;
+        }
     }
 }

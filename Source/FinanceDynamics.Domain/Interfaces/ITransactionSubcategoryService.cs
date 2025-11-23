@@ -4,6 +4,6 @@ namespace FinanceDynamics.Domain.Interfaces
 {
     public interface ITransactionSubcategoryService
     {
-        IEnumerable<string> GetSubcategories(TransactionKind kind, string categoryName);
+        IEnumerable<string> GetSubcategories(TransactionType kind, string categoryName);
     }
 }

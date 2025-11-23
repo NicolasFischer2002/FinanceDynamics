@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FinanceDynamics.Infrastructure.Repositories
 {
-    public class FinancialStatement : IFinancialStatement
+    public class FinancialStatementRepository : IFinancialStatement
     {
         private readonly FinanceDbContext _context;
 
-        public FinancialStatement(FinanceDbContext context)
+        public FinancialStatementRepository(FinanceDbContext context)
         {
             _context = context;
         }

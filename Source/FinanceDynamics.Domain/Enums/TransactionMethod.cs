@@ -18,5 +18,8 @@ namespace FinanceDynamics.Domain.Enums
 
         [Description("PIX")]
         PIX,
+
+        [Description("Boleto")]
+        Boleto,
     }
 }

@@ -93,19 +93,19 @@
     public async Task LoadTotalIncome(FinanceDynamics.Application.ValueObjects.DateRange range)
     {
         decimal totalIncome = await IIncomeRepository.GetIncomeValueByDateRange(range);
-        IncomeDisplay = MoneyFormatter.Format(totalIncome);
+        IncomeDisplay = MoneyFormatterService.Format(totalIncome);
     }
 
     public async Task LoadTotalExpense(FinanceDynamics.Application.ValueObjects.DateRange range)
     {
         decimal totalExpense = await IExpenseRepository.GetExpenseValueByDateRange(range);
-        ExpenseDisplay = MoneyFormatter.Format(totalExpense);
+        ExpenseDisplay = MoneyFormatterService.Format(totalExpense);
     }
 
     public async Task LoadBalance(FinanceDynamics.Application.ValueObjects.DateRange range)
     {
         decimal balance = await IFinancialStatement.BalanceBetweenDates(range);
-        Balance = MoneyFormatter.Format(balance);
+        Balance = MoneyFormatterService.Format(balance);
     }
 
     private double[] GetAllIncomeValues(IReadOnlyList<Domain.Entities.Income> incomes)

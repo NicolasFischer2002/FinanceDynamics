@@ -2,7 +2,7 @@
 
 namespace FinanceDynamics.Application.Services
 {
-    public static class MoneyFormatter
+    public static class MoneyFormatterService
     {
         public static string Format(decimal value)
         {

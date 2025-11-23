@@ -17,5 +17,19 @@ namespace FinanceDynamics.Domain.Entities
         {
 
         }
+
+        public Expense(
+            string Id,
+            Money value,
+            ExpenseCategory category,
+            ExpenseSubcategory? subcategory,
+            TransactionMethod method,
+            DateTime date,
+            TransactionDescription? description = null,
+            TransactionReceipt? receipt = null)
+            : base(Id, value, category, subcategory, method, date, description, receipt)
+        {
+
+        }
     }
 }

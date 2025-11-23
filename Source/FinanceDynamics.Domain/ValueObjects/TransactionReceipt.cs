@@ -6,12 +6,17 @@ namespace FinanceDynamics.Domain.ValueObjects
     {
         private string Name { get; set; }
         private byte[] File { get; set; }
+        private string Extension { get; set; }
         public long SizeInBytes => File.LongLength;
+        private readonly string[] ValidExtensions = [".pdf", ".png", ".jpg", ".jpeg"];
 
         public TransactionReceipt(string name, byte[] file)
         {
             name = name.Trim();
             ValidateName(name);
+
+            Extension = Path.GetExtension(name).ToLower();
+            ValidateExtension(Extension);
             ValidateSizeInBytes(file);
 
             Name = name;
@@ -20,13 +25,19 @@ namespace FinanceDynamics.Domain.ValueObjects
 
         private void ValidateName(string name)
         {
-            const int maximumLength = 50;
+            const int maximumLength = 100;
 
             if (string.IsNullOrWhiteSpace(name))
                 throw new DomainException($"O nome do arquivo não pode ser nulo ou vazio.", name);
 
             if (name.Length > maximumLength)
                 throw new DomainException($"O nome do arquivo não pode exceder {maximumLength} caracteres.", name);
+        }
+
+        private void ValidateExtension(string extension)
+        {
+            if (!ValidExtensions.Contains(extension))
+                throw new DomainException($"A extensão do arquivo [{extension}] é inválida.", extension);
         }
 
         private void ValidateSizeInBytes(byte[] file)
@@ -51,6 +62,11 @@ namespace FinanceDynamics.Domain.ValueObjects
         public byte[] GetFile()
         {
             return File;
+        }
+
+        public string GetExtension() 
+        {
+            return Extension;
         }
     }
 }

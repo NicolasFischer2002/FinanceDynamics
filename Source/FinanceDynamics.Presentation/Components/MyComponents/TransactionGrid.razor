@@ -1,6 +1,10 @@
-﻿@using FinanceDynamics.Presentation.DTOs
+﻿@using FinanceDynamics.Application.Interfaces
+@using FinanceDynamics.Presentation.DTOs
 @using System.Globalization
+@using Domain.Enums
 @inject ISnackbar Snackbar
+@inject ITransactionReceiptService ITransactionReceiptService
+@inject IJSRuntime JS
 
 <MudDataGrid @ref="DataGrid" Items="@TransactionList" SortMode="SortMode.Multiple"
     ColumnResizeMode="ResizeMode.Container">
@@ -67,10 +71,27 @@
         }
     }
 
-    private Task ViewReceipt(TransactionDTO transactionDTO)
+    private async Task ViewReceipt(TransactionDTO transactionDTO)
     {
-        Snackbar.Add($"Comprovante: #{transactionDTO.GuidId}", Severity.Normal);
-        return Task.CompletedTask;
+        var file = await ITransactionReceiptService.GetReceipt(transactionDTO.GuidId, TransactionType.Expense);
+
+        if (file is null)
+        {
+            Snackbar.Add($"Comprovante não localizado", Severity.Info);
+            return;
+        }
+
+        var base64 = Convert.ToBase64String(file.File);
+        
+        await JS.InvokeVoidAsync(
+            "downloadFileFromBase64", 
+            base64, 
+            file.FileName,
+            file.MIMEType
+        );
+
+        Snackbar.Add($"Comprovante {file.FileName} baixado com sucesso!", Severity.Success);
+        return;
     }
 
     private Task Edit(TransactionDTO transactionDTO)

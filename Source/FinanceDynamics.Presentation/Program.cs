@@ -1,5 +1,6 @@
 using FinanceDynamics.Application.Factories;
 using FinanceDynamics.Application.Interfaces;
+using FinanceDynamics.Application.Services;
 using FinanceDynamics.Domain.Interfaces;
 using FinanceDynamics.Domain.Services;
 using FinanceDynamics.Domain.Validators;
@@ -41,6 +42,7 @@ builder.Services.AddTransient(
 // Services
 builder.Services.AddTransient<ITransactionCategoryService, TransactionCategoryService>();
 builder.Services.AddTransient<ITransactionSubcategoryService, TransactionSubcategoryService>();
+builder.Services.AddTransient<ITransactionReceiptService, TransactionReceiptService>();
 
 // Factories 
 builder.Services.AddTransient<IExpenseFactory, ExpenseFactory>();
@@ -49,7 +51,8 @@ builder.Services.AddTransient<IIncomeFactory, IncomeFactory>();
 // Repositories
 builder.Services.AddTransient<IIncomeRepository, IncomeRepository>();
 builder.Services.AddTransient<IExpenseRepository, ExpenseRepository>();
-builder.Services.AddTransient<IFinancialStatement, FinancialStatement>();
+builder.Services.AddTransient<IFinancialStatement, FinancialStatementRepository>();
+builder.Services.AddTransient<ITransactionReceiptRepository, TransactionReceiptRepository>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
