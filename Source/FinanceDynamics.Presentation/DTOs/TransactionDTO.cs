@@ -25,5 +25,18 @@ namespace FinanceDynamics.Presentation.DTOs
             Date = date.ToString("dd/MM/yyyy");
             Description = description ?? string.Empty;
         }
+
+        public TransactionDTO(int id, string guidId, string value, string category, string? subCategory,
+            string transactionMethod, string date, string? description)
+        {
+            Id = id;
+            GuidId = guidId;
+            Value = value;
+            Category = category;
+            SubCategory = string.Empty;
+            TransactionMethod = transactionMethod;
+            Date = date;
+            Description = description is null ? string.Empty : description;
+        }
     }
 }

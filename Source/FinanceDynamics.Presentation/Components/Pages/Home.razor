@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using FinanceDynamics.Application.DTOs
 @using FinanceDynamics.Domain.Interfaces
 @using FinanceDynamics.Domain.Enums
 @using FinanceDynamics.Presentation.Components.MyComponents
@@ -108,19 +109,19 @@
         Balance = MoneyFormatterService.Format(balance);
     }
 
-    private double[] GetAllIncomeValues(IReadOnlyList<Domain.Entities.Income> incomes)
+    private double[] GetAllIncomeValues(IReadOnlyList<IncomeDTO> incomes)
     {
-        incomes = incomes.DistinctBy(i => i.Category.Name).ToArray();
+        incomes = incomes.DistinctBy(i => i.Category).ToArray();
 
         return incomes
-            .Select(i => (double)i.Value.Value)
+            .Select(i => double.Parse(MoneyFormatterService.RemoveFormatting(i.Value)))
             .ToArray();
     }
 
-    private string[] GetAllIncomeLabels(IReadOnlyList<Domain.Entities.Income> incomes)
+    private string[] GetAllIncomeLabels(IReadOnlyList<IncomeDTO> incomes)
     {
         return incomes
-            .Select(i => i.Category.Name)
+            .Select(i => i.Category)
             .Distinct()
             .ToArray();
     }

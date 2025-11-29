@@ -1,5 +1,6 @@
-﻿using FinanceDynamics.Domain.Entities;
+﻿using FinanceDynamics.Application.DTOs;
 using FinanceDynamics.Application.ValueObjects;
+using FinanceDynamics.Domain.Entities;
 
 namespace FinanceDynamics.Application.Interfaces
 {
@@ -9,7 +10,7 @@ namespace FinanceDynamics.Application.Interfaces
         Task AddAsync(Income income);
         Task UpdateAsync(Income income);
         Task DeleteAsync(int id);
-        Task<IReadOnlyList<Income>> GetIncomeByDateRange(DateRange dateRange);
+        Task<IReadOnlyList<IncomeDTO>> GetIncomeByDateRange(DateRange dateRange);
         Task<decimal> GetIncomeValueByDateRange(DateRange dateRange);
     }
 }

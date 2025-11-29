@@ -22,3 +22,15 @@ C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\ob
 C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.0\refint\FinanceDynamics.Domain.dll
 C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.pdb
 C:\Users\NicolasFischer\Desktop\FinanceDynamics\Source\FinanceDynamics.Domain\obj\Debug\net8.0\ref\FinanceDynamics.Domain.dll
+C:\Desenvolvimento\GitHub\.NET\Source\FinanceDynamics.Domain\bin\Debug\net8.0\FinanceDynamics.Domain.deps.json
+C:\Desenvolvimento\GitHub\.NET\Source\FinanceDynamics.Domain\bin\Debug\net8.0\FinanceDynamics.Domain.dll
+C:\Desenvolvimento\GitHub\.NET\Source\FinanceDynamics.Domain\bin\Debug\net8.0\FinanceDynamics.Domain.pdb
+C:\Desenvolvimento\GitHub\.NET\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Desenvolvimento\GitHub\.NET\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.AssemblyInfoInputs.cache
+C:\Desenvolvimento\GitHub\.NET\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.AssemblyInfo.cs
+C:\Desenvolvimento\GitHub\.NET\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\GitHub\.NET\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.sourcelink.json
+C:\Desenvolvimento\GitHub\.NET\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.dll
+C:\Desenvolvimento\GitHub\.NET\Source\FinanceDynamics.Domain\obj\Debug\net8.0\refint\FinanceDynamics.Domain.dll
+C:\Desenvolvimento\GitHub\.NET\Source\FinanceDynamics.Domain\obj\Debug\net8.0\FinanceDynamics.Domain.pdb
+C:\Desenvolvimento\GitHub\.NET\Source\FinanceDynamics.Domain\obj\Debug\net8.0\ref\FinanceDynamics.Domain.dll

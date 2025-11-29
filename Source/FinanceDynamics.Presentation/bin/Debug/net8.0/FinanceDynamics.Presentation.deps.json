@@ -32,8 +32,7 @@
       },
       "Microsoft.AspNetCore.Components/8.0.8": {
         "dependencies": {
-          "Microsoft.AspNetCore.Authorization": "8.0.8",
-          "Microsoft.AspNetCore.Components.Analyzers": "8.0.8"
+          "Microsoft.AspNetCore.Authorization": "8.0.8"
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Components.dll": {
@@ -42,7 +41,6 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components.Analyzers/8.0.8": {},
       "Microsoft.AspNetCore.Components.Forms/8.0.8": {
         "dependencies": {
           "Microsoft.AspNetCore.Components": "8.0.8"
@@ -92,7 +90,6 @@
       "Microsoft.EntityFrameworkCore/9.0.7": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Abstractions": "9.0.7",
-          "Microsoft.EntityFrameworkCore.Analyzers": "9.0.7",
           "Microsoft.Extensions.Caching.Memory": "9.0.7",
           "Microsoft.Extensions.Logging": "9.0.7"
         },
@@ -111,7 +108,6 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/9.0.7": {},
       "Microsoft.EntityFrameworkCore.Relational/9.0.7": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "9.0.7",
@@ -313,9 +309,6 @@
         }
       },
       "SQLitePCLRaw.core/2.1.11": {
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
         "runtime": {
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {
             "assemblyVersion": "2.1.11.2622",
@@ -469,7 +462,6 @@
           }
         }
       },
-      "System.Memory/4.5.3": {},
       "System.Text.Encodings.Web/9.0.7": {
         "runtime": {
           "lib/net8.0/System.Text.Encodings.Web.dll": {
@@ -554,13 +546,6 @@
       "path": "microsoft.aspnetcore.components/8.0.8",
       "hashPath": "microsoft.aspnetcore.components.8.0.8.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components.Analyzers/8.0.8": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-PKujmeqEO8fY/U5bWoww63yMF4XqjSnrq0cP4fXUyz4JVYTkh+MZEFktfLaoVaGU4JbtUNjJFvEYA96H8lbb8Q==",
-      "path": "microsoft.aspnetcore.components.analyzers/8.0.8",
-      "hashPath": "microsoft.aspnetcore.components.analyzers.8.0.8.nupkg.sha512"
-    },
     "Microsoft.AspNetCore.Components.Forms/8.0.8": {
       "type": "package",
       "serviceable": true,
@@ -602,13 +587,6 @@
       "sha512": "sha512-YUXNerEkCf4OANO+zjuMznpUW7R8XxSCqmBfYhBrbrJVc09i84KkNgeUTaOUXCGogSK/3d7ORRhMqfUobnejBg==",
       "path": "microsoft.entityframeworkcore.abstractions/9.0.7",
       "hashPath": "microsoft.entityframeworkcore.abstractions.9.0.7.nupkg.sha512"
-    },
-    "Microsoft.EntityFrameworkCore.Analyzers/9.0.7": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-HqiPjAvjVOsyA1svnjL81/Wk2MRQYMK/lxKVWvw0f5IcA//VcxBepVSAqe7CFirdsPXqe8rFKEwZROWZTz7Jqw==",
-      "path": "microsoft.entityframeworkcore.analyzers/9.0.7",
-      "hashPath": "microsoft.entityframeworkcore.analyzers.9.0.7.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/9.0.7": {
       "type": "package",
@@ -763,13 +741,6 @@
       "sha512": "sha512-I9KHYFNKQkufs/Ec7evpPPSu2HkuW+jNpq1kT0WOWjzuN6BjxRYy7CuWNLjQmuBzcKd9vKrHaPGcHVxSF5DadQ==",
       "path": "system.io.pipelines/9.0.7",
       "hashPath": "system.io.pipelines.9.0.7.nupkg.sha512"
-    },
-    "System.Memory/4.5.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
-      "path": "system.memory/4.5.3",
-      "hashPath": "system.memory.4.5.3.nupkg.sha512"
     },
     "System.Text.Encodings.Web/9.0.7": {
       "type": "package",

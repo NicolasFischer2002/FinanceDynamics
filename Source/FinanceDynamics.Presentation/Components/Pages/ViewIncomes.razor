@@ -1,4 +1,5 @@
 ﻿@page "/ViewIncomes"
+@using FinanceDynamics.Application.DTOs
 @using FinanceDynamics.Domain.Enums
 @using FinanceDynamics.Presentation.Components.MyComponents
 @using FinanceDynamics.Domain.Entities
@@ -26,7 +27,7 @@
 
     private async Task FillInTransactionList(FinanceDynamics.Application.ValueObjects.DateRange range)
     {
-        IReadOnlyList<Income>? incomes = await IIncomeRepository.GetIncomeByDateRange(range);
+        IReadOnlyList<IncomeDTO>? incomes = await IIncomeRepository.GetIncomeByDateRange(range);
 
         if (incomes is null || incomes.Count == 0)
         {
@@ -35,15 +36,15 @@
         }
 
         Incomes = incomes
-            .Select((tl, index )=> new TransactionDTO(
+            .Select((tl, index ) => new TransactionDTO(
                 index + 1,
-                tl.Id,
-                tl.Value.GetValue(),
-                tl.Category.Name,
-                tl.Subcategory?.Name ?? string.Empty,
-                tl.Method.ToString(),
+                tl.GuidId,
+                tl.Value,
+                tl.Category,
+                tl.SubCategory,
+                tl.TransactionMethod,
                 tl.Date,
-                tl.Description?.ToString()
+                tl.Description
             ));
     }
 }

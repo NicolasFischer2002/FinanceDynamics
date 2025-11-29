@@ -1,4 +1,5 @@
-﻿using FinanceDynamics.Application.Interfaces;
+﻿using FinanceDynamics.Application.DTOs;
+using FinanceDynamics.Application.Interfaces;
 using FinanceDynamics.Application.ValueObjects;
 using FinanceDynamics.Domain.Entities;
 using FinanceDynamics.Infrastructure.Data;
@@ -34,13 +35,22 @@ namespace FinanceDynamics.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<IReadOnlyList<Income>> GetIncomeByDateRange(DateRange dateRange)
+        public async Task<IReadOnlyList<IncomeDTO>> GetIncomeByDateRange(DateRange dateRange)
         {
             IReadOnlyList<Data.Entities.Income> incomes = await _context.Incomes
                 .Where(i => i.DateTime >= dateRange.StartDate && i.DateTime <= dateRange.EndDate)
                 .ToListAsync();
 
-            return incomes.Select(i => IncomeMapper.ToDomain(i)).ToList();
+            return incomes.Select(i => new IncomeDTO(
+                i.GuidId,
+                i.Id,
+                (decimal)i.Value,
+                i.Category,
+                i.Subcategory is null ? string.Empty : i.Subcategory,
+                i.Method,
+                i.DateTime,
+                i.Description is null ? string.Empty : i.Description
+            )).ToList();
         }
 
         public Task UpdateAsync(Income income)
