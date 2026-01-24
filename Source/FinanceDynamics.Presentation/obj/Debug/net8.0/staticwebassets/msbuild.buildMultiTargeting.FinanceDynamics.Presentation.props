@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\FinanceDynamics.Presentation.props" />
-</Project>
