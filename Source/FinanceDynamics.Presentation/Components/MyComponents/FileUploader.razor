@@ -57,4 +57,10 @@
         if (FilesChanged.HasDelegate)
             await FilesChanged.InvokeAsync(_files);
     }
+
+    public void ClearFiles()
+    {
+        _files.Clear();
+        StateHasChanged();
+    }
 }

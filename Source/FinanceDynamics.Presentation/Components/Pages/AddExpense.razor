@@ -90,7 +90,7 @@
 
     private void OnFilesUpdated(List<IBrowserFile> files)
     {
-        
+
     }
 
     private string Description { get; set; } = string.Empty;
@@ -102,12 +102,14 @@
             decimal value = _valueBr ?? 0m;
             TransactionReceipt? transactionReceipt = _fileUploader is not null ? await _fileUploader.GetReceiptAsync() : null;
 
+            var selectedDate = Date ?? DateTime.Today;
+
             Expense expense = IExpenseFactory.Create(
                 value,
                 Category,
                 Subcategory,
                 PaymentMethod,
-                DateTime.Now,
+                selectedDate,
                 Description,
                 transactionReceipt
             );
@@ -116,11 +118,25 @@
 
             Snackbar.Clear();
             Snackbar.Add($"Adicionado com sucesso!", Severity.Success);
+            ResetForm();
         }
         catch (Exception ex)
         {
             Snackbar.Clear();
             Snackbar.Add($"Erro ao adicionar: {ex.Message}", Severity.Error);
         }
+    }
+
+    private void ResetForm()
+    {
+        _valueBr = 0M;
+        Category = string.Empty;
+        Subcategory = string.Empty;
+        PaymentMethod = string.Empty;
+        Date = DateTime.Today;
+        Description = string.Empty;
+        _fileUploader?.ClearFiles();
+
+        StateHasChanged();
     }
 }

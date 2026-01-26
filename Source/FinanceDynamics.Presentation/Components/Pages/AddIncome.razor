@@ -104,20 +104,23 @@
             decimal value = _valueBr ?? 0m;
             TransactionReceipt? transactionReceipt = _fileUploader is not null ? await _fileUploader.GetReceiptAsync() : null;
 
+            var selectedDate = Date ?? DateTime.Today;
+
             Income income = IIncomeFactory.Create(
                 value,
                 Category, 
                 Subcategory, 
                 PaymentMethod, 
-                DateTime.Now, 
+                selectedDate,
                 Description,
                 transactionReceipt
             );
-            
+
             await IIncomeRepository.AddAsync(income);
 
             Snackbar.Clear();
             Snackbar.Add($"Adicionado com sucesso!", Severity.Success);
+            ResetForm();
         }
         catch (DomainException ex)
         {
@@ -129,5 +132,18 @@
             Snackbar.Clear();
             Snackbar.Add($"Erro inesperado: {ex.Message}", Severity.Error);
         }
+    }
+
+    private void ResetForm()
+    {
+        _valueBr = 0M;
+        Category = string.Empty;
+        Subcategory = string.Empty;
+        PaymentMethod = string.Empty;
+        Date = DateTime.Today;
+        Description = string.Empty;
+        _fileUploader?.ClearFiles();
+
+        StateHasChanged();
     }
 }

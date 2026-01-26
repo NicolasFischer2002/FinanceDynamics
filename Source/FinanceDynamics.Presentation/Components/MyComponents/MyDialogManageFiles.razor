@@ -1,0 +1,156 @@
+﻿@using Domain.Enums
+@using FinanceDynamics.Application.DTOs
+@using FinanceDynamics.Application.Interfaces
+@using FinanceDynamics.Domain.ValueObjects
+@inject ITransactionReceiptService ITransactionReceiptService
+@inject ITransactionReceiptRepository ITransactionReceiptRepository
+@inject ISnackbar Snackbar
+@inject IJSRuntime JS
+
+@if (TransactionReceipt is null)
+{
+    <MudDialog>
+        <DialogContent>
+            <FileUploader @ref="_fileUploader" FilesChanged="OnFilesUpdated" />
+        </DialogContent>
+        <DialogActions>
+            <MudButton Color="@Color.Success" Variant="Variant.Filled" OnClick="@(async () => await SaveReceipt())">Salvar Comprovante</MudButton>
+        </DialogActions>
+    </MudDialog>
+} else
+{
+    <MudDialog>
+        <DialogContent>
+            <MudStack>
+                <MudStack Row="true" AlignItems="AlignItems.Center">
+                    <MudText Typo="Typo.h6">Baixar</MudText>
+                    <MudIconButton Icon="@Icons.Material.Filled.FileOpen"
+                                   Size="Size.Medium"
+                                   Color="Color.Primary"
+                                   Title="Visualizar comprovante"
+                                   OnClick="@(async () => await ViewReceipt())" />
+                </MudStack>
+                <MudStack Row="true" AlignItems="AlignItems.Center">
+                    <MudText Typo="Typo.h6">Excluir</MudText>
+                    <MudIconButton Icon="@Icons.Material.Filled.Delete"
+                                   Size="Size.Medium"
+                                   Color="Color.Error"
+                                   Title="Excluir"
+                                   OnClick="@(async () => await Delete())" />
+                </MudStack>
+            </MudStack>
+        </DialogContent>
+        <DialogActions>
+            <MudButton Color="@Color.Success" Variant="Variant.Filled" OnClick="Submit">Finalizar</MudButton>
+        </DialogActions>
+    </MudDialog>
+}
+
+@code {
+    [CascadingParameter]
+    private MudDialogInstance MudDialog { get; set; } = null!;
+
+    [Parameter]
+    public required string IdTransaction { get; set; }
+    [Parameter]
+    public required TransactionType TransactionType { get; init; }
+    private ReceiptDTO? TransactionReceipt { get; set; }
+
+    private void Submit() => MudDialog.Close(DialogResult.Ok(true));
+
+    private void Cancel() => MudDialog.Cancel();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        TransactionReceipt = await ITransactionReceiptService.GetReceipt(IdTransaction, TransactionType);
+    }
+
+    private async Task ViewReceipt()
+    {
+        if (TransactionReceipt is null)
+        {
+            Snackbar.Add($"Comprovante não localizado", Severity.Info);
+            return;
+        }
+
+        var base64 = Convert.ToBase64String(TransactionReceipt.File);
+
+        await JS.InvokeVoidAsync(
+            "downloadFileFromBase64",
+            base64,
+            TransactionReceipt.FileName,
+            TransactionReceipt.MIMEType
+        );
+
+        Snackbar.Add($"Comprovante {TransactionReceipt.FileName} baixado com sucesso!", Severity.Success);
+        return;
+    }
+
+    private async Task Delete()
+    {
+        if (TransactionReceipt is null)
+        {
+            Snackbar.Add($"Comprovante não localizado", Severity.Info);
+            return;
+        }
+
+        var deleted = await ITransactionReceiptRepository.DeleteReceipt(IdTransaction, TransactionType);
+
+        if (!deleted)
+        {
+            Snackbar.Add($"Não foi possível excluir o comprovante: #{TransactionReceipt.FileName}", Severity.Error);
+            return;
+        }
+
+        Snackbar.Add($"Comprovante excluído com sucesso: #{TransactionReceipt.FileName}", Severity.Success);
+        TransactionReceipt = null;
+        StateHasChanged();
+    }
+
+    private async Task SaveReceipt()
+    {
+        if (_fileUploader is null)
+        {
+            Snackbar.Add("Comprovante não selecionado", Severity.Warning);
+            return;
+        }
+
+        var transactionReceipt = await _fileUploader.GetReceiptAsync();
+
+        if (transactionReceipt is null)
+        {
+            Snackbar.Add("Comprovante não selecionado", Severity.Warning);
+            transactionReceipt = null;
+            return;
+        }
+
+        var saved = await ITransactionReceiptRepository.AddReceipt(IdTransaction, TransactionType, transactionReceipt);
+
+        if (!saved)
+        {
+            Snackbar.Add($"Não foi possível salvar o comprovante: #{transactionReceipt.GetNameFile()}", Severity.Error);
+            transactionReceipt = null;
+            return;
+        }
+
+        TransactionReceipt = new ReceiptDTO(
+            transactionReceipt.GetNameFile(),
+            transactionReceipt.GetExtension(),
+            transactionReceipt.GetExtension(),
+            transactionReceipt.GetFile()
+        );
+
+        Snackbar.Add($"Comprovante adicionado com sucesso: #{TransactionReceipt.FileName}", Severity.Success);
+        StateHasChanged();
+        Submit();
+    }
+
+    private FileUploader? _fileUploader;
+
+    private void OnFilesUpdated(List<IBrowserFile> files)
+    {
+
+    }
+}

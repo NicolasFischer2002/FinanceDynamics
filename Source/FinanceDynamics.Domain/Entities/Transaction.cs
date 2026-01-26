@@ -1,4 +1,5 @@
 ﻿using FinanceDynamics.Domain.Enums;
+using FinanceDynamics.Domain.Exceptions;
 using FinanceDynamics.Domain.ValueObjects;
 
 namespace FinanceDynamics.Domain.Entities
@@ -34,6 +35,8 @@ namespace FinanceDynamics.Domain.Entities
             Date = date;
             Description = description;
             Receipt = receipt;
+
+            ValidateState();
         }
 
         protected Transaction(
@@ -55,6 +58,16 @@ namespace FinanceDynamics.Domain.Entities
             Date = date;
             Description = description;
             Receipt = receipt;
+
+            ValidateState();
+        }
+
+        private void ValidateState()
+        {
+            if (Category.Name == string.Empty)
+            {
+                throw new DomainException("A categoria da transação deve ser informada.", string.Empty);
+            }
         }
     }
 }

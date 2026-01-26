@@ -15,7 +15,7 @@ namespace FinanceDynamics.Domain.Entities
             TransactionReceipt? receipt = null)
             : base(value, category, subcategory, method, date, description, receipt)
         {
-
+            
         }
 
         public Income(
@@ -29,7 +29,7 @@ namespace FinanceDynamics.Domain.Entities
             TransactionReceipt? receipt = null)
             : base(Id, value, category, subcategory, method, date, description, receipt)
         {
-
+            
         }
     }
 }

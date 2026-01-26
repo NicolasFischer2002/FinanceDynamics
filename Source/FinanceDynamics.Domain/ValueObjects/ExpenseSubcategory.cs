@@ -15,6 +15,7 @@
         public static readonly ExpenseSubcategory Course = new("Curso", ExpenseCategory.Education);
 
         public static readonly ExpenseSubcategory IPVA = new("IPVA", ExpenseCategory.Taxes);
+        public static readonly ExpenseSubcategory Licensing = new("Licenciamento", ExpenseCategory.Taxes);
         public static readonly ExpenseSubcategory IPTU = new("IPTU", ExpenseCategory.Taxes);
         public static readonly ExpenseSubcategory IncomeTax = new("Imposto de Renda", ExpenseCategory.Taxes);
 

@@ -5,9 +5,10 @@
 @inject ISnackbar Snackbar
 @inject ITransactionReceiptService ITransactionReceiptService
 @inject IJSRuntime JS
+@inject IDialogService DialogService
 
 <MudDataGrid @ref="DataGrid" Items="@TransactionList" SortMode="SortMode.Multiple"
-    ColumnResizeMode="ResizeMode.Container">
+             ColumnResizeMode="ResizeMode.None">
     <Columns>
         <PropertyColumn Property="x => x.Id" Comparer="@(NaturalSortingEnabled ? new MudBlazor.Utilities.NaturalComparer() : null)" />
         <PropertyColumn Property="x => x.Value" Title="Valor" />
@@ -16,44 +17,24 @@
         <PropertyColumn Property="x => x.TransactionMethod" Title="Método da transação" />
         <PropertyColumn Property="x => x.Date" Title="Data" />
         <PropertyColumn Property="x => x.Description" Title="Descrição" />
- 
-        <TemplateColumn CellClass="">
-            <CellTemplate>
-                <MudIconButton Icon="@Icons.Material.Filled.FileOpen"
-                               Size="Size.Small"
-                               Color="Color.Primary"
-                               Title="Visualizar comprovante"
-                               OnClick="@(async () => await ViewReceipt(context.Item))" />
-            </CellTemplate>
-        </TemplateColumn>
- 
+
         <TemplateColumn CellClass="">
             <CellTemplate>
                 <MudIconButton Icon="@Icons.Material.Filled.Edit"
                                Size="Size.Small"
                                Color="Color.Primary"
                                Title="Editar"
-                               OnClick="@(async () => await Edit(context.Item))" />
-            </CellTemplate>
-        </TemplateColumn>
- 
-        <TemplateColumn CellClass="">
-            <CellTemplate>
-                <MudIconButton Icon="@Icons.Material.Filled.Delete"
-                               Size="Size.Small"
-                               Color="Color.Error"
-                               Title="Excluir"
-                               OnClick="@(async () => await Delete(context.Item))" />
+                               @onclick="@(async () => await ManageFiles(context.Item))">
+                </MudIconButton>
             </CellTemplate>
         </TemplateColumn>
     </Columns>
-
 </MudDataGrid>
 
 @code {
     [Parameter, EditorRequired]
     public IEnumerable<TransactionDTO> TransactionList { get; init; } = [];
-    
+
     [Parameter, EditorRequired]
     public required TransactionType TransactionType { get; init; }
 
@@ -75,38 +56,16 @@
         }
     }
 
-    private async Task ViewReceipt(TransactionDTO transactionDTO)
+    private async Task ManageFiles(TransactionDTO transactionDTO)
     {
-        var file = await ITransactionReceiptService.GetReceipt(transactionDTO.GuidId, TransactionType);
-
-        if (file is null)
+        var parameters = new DialogParameters<MyDialogManageFiles>
         {
-            Snackbar.Add($"Comprovante não localizado", Severity.Info);
-            return;
-        }
+            { x => x.IdTransaction, transactionDTO.GuidId },
+            { x => x.TransactionType, TransactionType }
+        };
 
-        var base64 = Convert.ToBase64String(file.File);
-        
-        await JS.InvokeVoidAsync(
-            "downloadFileFromBase64", 
-            base64, 
-            file.FileName,
-            file.MIMEType
-        );
+        var options = new DialogOptions() { CloseButton = true, MaxWidth = MaxWidth.Small, FullWidth = true };
 
-        Snackbar.Add($"Comprovante {file.FileName} baixado com sucesso!", Severity.Success);
-        return;
-    }
-
-    private Task Edit(TransactionDTO transactionDTO)
-    {
-        Snackbar.Add($"Editar: #{transactionDTO.GuidId}", Severity.Info);
-        return Task.CompletedTask;
-    }
-
-    private Task Delete(TransactionDTO transactionDTO)
-    {
-        Snackbar.Add($"Excluir: #{transactionDTO.GuidId}", Severity.Warning);
-        return Task.CompletedTask;
+        var teste = DialogService.ShowAsync<MyDialogManageFiles>("Gerenciar Comprovante", parameters, options);
     }
 }

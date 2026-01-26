@@ -21,5 +21,8 @@ namespace FinanceDynamics.Domain.Enums
 
         [Description("Boleto")]
         Boleto,
+
+        [Description("Vale-refeição")]
+        MealVoucher
     }
 }
