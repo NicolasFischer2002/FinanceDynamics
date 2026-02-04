@@ -28,6 +28,16 @@
                 </MudIconButton>
             </CellTemplate>
         </TemplateColumn>
+        <TemplateColumn CellClass="">
+            <CellTemplate>
+                <MudIconButton Icon="@Icons.Material.Filled.RemoveCircleOutline"
+                               Size="Size.Small"
+                               Color="Color.Primary"
+                               Title="Deletar registro"
+                               @onclick="@(async () => await DeleteTransaction(context.Item))">
+                </MudIconButton>
+            </CellTemplate>
+        </TemplateColumn>
     </Columns>
 </MudDataGrid>
 
@@ -67,5 +77,10 @@
         var options = new DialogOptions() { CloseButton = true, MaxWidth = MaxWidth.Small, FullWidth = true };
 
         var teste = DialogService.ShowAsync<MyDialogManageFiles>("Gerenciar Comprovante", parameters, options);
+    }
+
+    private async Task DeleteTransaction(TransactionDTO transactionDTO)
+    {
+        Snackbar.Add($"Registro deletado com sucesso!", Severity.Success);
     }
 }

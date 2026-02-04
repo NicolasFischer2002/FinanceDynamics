@@ -1,0 +1,25 @@
+﻿<MudContainer MaxWidth="MaxWidth.Small">
+    <MudStack>
+        <MudDateRangePicker DateRange="@DateRange"
+                            DateRangeChanged="OnDateRangeChanged"
+                            DateFormat="dddd, dd MMMM, yyyy"
+                            TitleDateFormat="MMMM dd"
+                            Margin="Margin.Dense"
+                            Variant="Variant.Filled"
+                            Label="Período" />
+    </MudStack>
+</MudContainer>
+
+@code {
+    [Parameter]
+    public DateRange? DateRange { get; set; }
+
+    [Parameter]
+    public EventCallback<DateRange?> DateRangeChanged { get; set; }
+
+    private async Task OnDateRangeChanged(DateRange? newRange)
+    {
+        DateRange = newRange;
+        await DateRangeChanged.InvokeAsync(newRange);
+    }
+}

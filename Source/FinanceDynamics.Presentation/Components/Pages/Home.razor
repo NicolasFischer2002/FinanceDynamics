@@ -8,10 +8,15 @@
 @inject IIncomeRepository IIncomeRepository
 @inject IExpenseRepository IExpenseRepository
 @inject IFinancialStatement IFinancialStatement
+@inject ISnackbar Snackbar
 
 <PageTitle>Home</PageTitle>
 
-<MudGrid Justify="Justify.Center" Spacing="2">
+<MyDateRange DateRange="@_dateRange"
+             DateRangeChanged="OnDateRangeChanged" />
+
+
+<MudGrid Justify="Justify.Center" Spacing="2" Class="mt-8">
     <MudItem xs="12" sm="4" md="4">
         <CustomCard Title="Receitas" Content="@IncomeDisplay" BackgroundColor="#72AC54" TextColor="#FFFFFF" />
     </MudItem>
@@ -33,6 +38,8 @@
 </MudPaper>
 
 @code {
+    private DateRange? _dateRange;
+
     private double[] IncomeData = [];
     private string[] IncomeLabels = [];
 
@@ -45,22 +52,37 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await LoadGraphicalInterface();
-    }
-
-    private async Task LoadGraphicalInterface()
-    {
         var today = DateTime.Today;
         var startOfMonth = new DateTime(today.Year, today.Month, 1);
         var endOfMonth = startOfMonth.AddMonths(1).AddDays(-1);
 
-        var range = new FinanceDynamics.Application.ValueObjects.DateRange(startOfMonth, endOfMonth);
+        await LoadGraphicalInterface(startOfMonth, endOfMonth);
+    }
+
+    private async Task LoadGraphicalInterface(DateTime startDate, DateTime endDate)
+    {
+        var range = new FinanceDynamics.Application.ValueObjects.DateRange(
+            startDate,
+            endDate
+        );
 
         await LoadCharts(range);
 
         await LoadTotalIncome(range);
         await LoadTotalExpense(range);
         await LoadBalance(range);
+
+        Snackbar.Add($"Registros carregados com sucesso!", Severity.Success);
+    }
+
+    private async Task OnDateRangeChanged(DateRange? range)
+    {
+        _dateRange = range;
+
+        if (_dateRange?.Start is null || _dateRange?.End is null)
+            return;
+
+        await LoadGraphicalInterface(_dateRange.Start.Value, _dateRange.End.Value);
     }
 
     private async Task LoadCharts(FinanceDynamics.Application.ValueObjects.DateRange range)

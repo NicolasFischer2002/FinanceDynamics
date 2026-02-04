@@ -8,11 +8,15 @@
 
 <PageTitle>Consultar despesas</PageTitle>
 
+<MyDateRange DateRange="@_dateRange"
+             DateRangeChanged="OnDateRangeChanged" />
+
 <MudText Typo="Typo.h6" GutterBottom="true">Consultar despesas</MudText>
 
 <TransactionGrid TransactionList="@Expenses" TransactionType="TransactionType.Expense"></TransactionGrid>
 
 @code {
+    private DateRange? _dateRange;
     private IEnumerable<TransactionDTO> Expenses { get; set; } = Array.Empty<TransactionDTO>();
 
     protected override async Task OnInitializedAsync() 
@@ -23,6 +27,18 @@
 
         var range = new FinanceDynamics.Application.ValueObjects.DateRange(startOfMonth, endOfMonth);
         await FillInTransactionList(range);
+    }
+
+    private async Task OnDateRangeChanged(DateRange? range)
+    {
+        _dateRange = range;
+
+        if (_dateRange?.Start is null || _dateRange?.End is null)
+            return;
+
+        var newRange = new FinanceDynamics.Application.ValueObjects.DateRange(_dateRange.Start.Value, _dateRange.End.Value);
+
+        await FillInTransactionList(newRange);
     }
 
     private async Task FillInTransactionList(FinanceDynamics.Application.ValueObjects.DateRange range)

@@ -16,12 +16,12 @@
             EndDate = endDate;
         }
 
-        private DateTime RemoveHoursFromDate(DateTime date)
+        private static DateTime RemoveHoursFromDate(DateTime date)
         {
             return date.Date;
         }
 
-        private void ValidateDates(DateTime startDate, DateTime endDate)
+        private static void ValidateDates(DateTime startDate, DateTime endDate)
         {
             if (endDate < startDate)
                 throw new ArgumentException("A data final não pode ser anterior à data inicial.", nameof(endDate));

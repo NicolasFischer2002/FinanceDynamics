@@ -6,9 +6,8 @@
         public static readonly ExpenseSubcategory Supermarket = new("Supermercado", ExpenseCategory.Food);
         public static readonly ExpenseSubcategory EatingOut = new("Comer Fora", ExpenseCategory.Food);
 
-        public static readonly ExpenseSubcategory Electricity = new("Energia/Luz", ExpenseCategory.BillsAndServices);
-        public static readonly ExpenseSubcategory Water = new("Água", ExpenseCategory.BillsAndServices);
-        public static readonly ExpenseSubcategory Internet = new("Internet", ExpenseCategory.BillsAndServices);
+        public static readonly ExpenseSubcategory MobileData = new ("Dados Móveis", ExpenseCategory.BillsAndServices);
+        public static readonly ExpenseSubcategory Haircut = new("Corte de cabelo", ExpenseCategory.BillsAndServices);
 
         public static readonly ExpenseSubcategory CollegeTuition = new("Mensalidade Curso Superior", ExpenseCategory.Education);
         public static readonly ExpenseSubcategory Books = new("Livro(s)", ExpenseCategory.Education);
@@ -22,8 +21,12 @@
         public static readonly ExpenseSubcategory YoutubePremium = new("Youtube Premium", ExpenseCategory.LeisureEntertainment);
         public static readonly ExpenseSubcategory Cinema = new("Cinema", ExpenseCategory.LeisureEntertainment);
 
-        public static readonly ExpenseSubcategory FinancingInstallment = new("Parcela Financiamento", ExpenseCategory.Housing);
+        public static readonly ExpenseSubcategory FinancingInstallment = new("Parcela de Financiamento", ExpenseCategory.Housing);
         public static readonly ExpenseSubcategory Rent = new("Aluguel", ExpenseCategory.Housing);
+        public static readonly ExpenseSubcategory Condominium = new("Condomínio", ExpenseCategory.Housing);
+        public static readonly ExpenseSubcategory Electricity = new("Energia/Luz", ExpenseCategory.Housing);
+        public static readonly ExpenseSubcategory Water = new("Água", ExpenseCategory.Housing);
+        public static readonly ExpenseSubcategory Internet = new("Internet", ExpenseCategory.Housing);
 
         public static readonly ExpenseSubcategory Pharmacy = new("Farmácia", ExpenseCategory.Health);
         public static readonly ExpenseSubcategory MedicalConsultation = new("Consulta Médica", ExpenseCategory.Health);

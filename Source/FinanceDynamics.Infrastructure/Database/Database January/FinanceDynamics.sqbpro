@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="FinanceDynamics.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1039"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title=".Navegáveis" custom_title="0" dock_id="3" table="0,11:Navegáveis"/><dock_state state="000000ff00000000fd0000000100000002000005a70000038cfc0100000003fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500320100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500330100000000000005a70000011f00ffffff0000025f0000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1*">-- Tabela de despesas
+CREATE TABLE IF NOT EXISTS Expenses (
+    Id           INTEGER    PRIMARY KEY AUTOINCREMENT,
+    GuidId       TEXT       NOT NULL UNIQUE,
+    Value        REAL       NOT NULL,
+    Category     TEXT       NOT NULL,
+    Subcategory  TEXT,
+    Method       TEXT       NOT NULL,
+    DateTime     DATETIME   NOT NULL,    -- tipo DATETIME para affinity de data
+    Description  TEXT
+);
+
+-- Recibos de transação de despesa
+CREATE TABLE IF NOT EXISTS ExpenseTransactionReceipts (
+    Id       INTEGER    PRIMARY KEY AUTOINCREMENT,
+    GuidId   TEXT       NOT NULL,
+    Name     TEXT       NOT NULL,
+    File     BLOB       NOT NULL,
+    FOREIGN KEY (GuidId) REFERENCES Expenses (GuidId) ON DELETE CASCADE
+);
+
+-- Tabela de receitas
+CREATE TABLE IF NOT EXISTS Incomes (
+    Id           INTEGER    PRIMARY KEY AUTOINCREMENT,
+    GuidId       TEXT       NOT NULL UNIQUE,
+    Value        REAL       NOT NULL,
+    Category     TEXT       NOT NULL,
+    Subcategory  TEXT,
+    Method       TEXT       NOT NULL,
+    DateTime     DATETIME   NOT NULL,    -- aqui também
+    Description  TEXT
+);
+
+-- Recibos de transação de receita
+CREATE TABLE IF NOT EXISTS IncomeTransactionReceipts (
+    Id       INTEGER    PRIMARY KEY AUTOINCREMENT,
+    GuidId   TEXT       NOT NULL,
+    Name     TEXT       NOT NULL,
+    File     BLOB       NOT NULL,
+    FOREIGN KEY (GuidId) REFERENCES Incomes (GuidId) ON DELETE CASCADE
+);
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
