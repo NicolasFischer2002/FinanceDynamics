@@ -6,6 +6,8 @@
 @inject ITransactionReceiptService ITransactionReceiptService
 @inject IJSRuntime JS
 @inject IDialogService DialogService
+@inject IExpenseRepository IExpenseRepository
+@inject IIncomeRepository IIncomeRepository
 
 <MudDataGrid @ref="DataGrid" Items="@TransactionList" SortMode="SortMode.Multiple"
              ColumnResizeMode="ResizeMode.None">
@@ -43,7 +45,7 @@
 
 @code {
     [Parameter, EditorRequired]
-    public IEnumerable<TransactionDTO> TransactionList { get; init; } = [];
+    public List<TransactionDTO> TransactionList { get; set; } = new();
 
     [Parameter, EditorRequired]
     public required TransactionType TransactionType { get; init; }
@@ -81,6 +83,18 @@
 
     private async Task DeleteTransaction(TransactionDTO transactionDTO)
     {
+        if (TransactionType == TransactionType.Expense)
+        {
+            await IExpenseRepository.DeleteAsync(transactionDTO.GuidId);
+        }
+        else
+        {
+            await IIncomeRepository.DeleteAsync(transactionDTO.GuidId);
+        }
+
+        TransactionList.Remove(transactionDTO);
+        StateHasChanged();
+
         Snackbar.Add($"Registro deletado com sucesso!", Severity.Success);
     }
 }

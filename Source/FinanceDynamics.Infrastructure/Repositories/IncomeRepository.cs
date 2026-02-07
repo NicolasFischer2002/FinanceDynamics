@@ -53,9 +53,9 @@ namespace FinanceDynamics.Infrastructure.Repositories
             )).ToList();
         }
 
-        public Task UpdateAsync(Income income)
+        public async Task DeleteAsync(string guidId)
         {
-            throw new NotImplementedException();
+            await _context.Incomes.Where(e => e.GuidId == guidId).ExecuteDeleteAsync();
         }
 
         public async Task<decimal> GetIncomeValueByDateRange(DateRange dateRange)
@@ -64,6 +64,11 @@ namespace FinanceDynamics.Infrastructure.Repositories
                 .Where(i => i.DateTime >= dateRange.StartDate && i.DateTime <= dateRange.EndDate)
                 .Select(i => (decimal)i.Value)
                 .SumAsync();
+        }
+
+        public Task UpdateAsync(Income income)
+        {
+            throw new NotImplementedException();
         }
     }
 }

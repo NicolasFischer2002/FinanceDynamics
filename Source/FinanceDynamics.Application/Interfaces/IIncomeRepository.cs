@@ -9,7 +9,7 @@ namespace FinanceDynamics.Application.Interfaces
         Task<Income> GetByIdAsync(int id);
         Task AddAsync(Income income);
         Task UpdateAsync(Income income);
-        Task DeleteAsync(int id);
+        Task DeleteAsync(string guidId);
         Task<IReadOnlyList<IncomeDTO>> GetIncomeByDateRange(DateRange dateRange);
         Task<decimal> GetIncomeValueByDateRange(DateRange dateRange);
     }

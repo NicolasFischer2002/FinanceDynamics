@@ -17,7 +17,7 @@
 
 @code {
     private DateRange? _dateRange;
-    private IEnumerable<TransactionDTO> Incomes { get; set; } = Array.Empty<TransactionDTO>();
+    private List<TransactionDTO> Incomes { get; set; } = new List<TransactionDTO>();
 
     protected override async Task OnInitializedAsync() 
     {
@@ -47,7 +47,7 @@
 
         if (incomes is null || incomes.Count == 0)
         {
-            Incomes = Array.Empty<TransactionDTO>();
+            Incomes = new List<TransactionDTO>();
             return;
         }
 
@@ -61,6 +61,6 @@
                 tl.TransactionMethod,
                 tl.Date,
                 tl.Description
-            ));
+            )).ToList();
     }
 }

@@ -24,9 +24,9 @@ namespace FinanceDynamics.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(string guidId)
         {
-            throw new NotImplementedException();
+            await _context.Expenses.Where(e => e.GuidId == guidId).ExecuteDeleteAsync();
         }
 
         public Task<Expense> GetByIdAsync(int id)
