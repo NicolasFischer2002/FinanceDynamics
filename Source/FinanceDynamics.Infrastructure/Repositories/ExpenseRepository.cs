@@ -43,6 +43,7 @@ namespace FinanceDynamics.Infrastructure.Repositories
         {
             IReadOnlyList<Data.Entities.Expense> expenses = await _context.Expenses
                 .Where(e => e.DateTime >= dateRange.StartDate && e.DateTime <= dateRange.EndDate)
+                .OrderBy(e => e.DateTime)
                 .ToListAsync();
 
             return expenses.Select(e => ExpenseMapper.ToDomain(e)).ToList();

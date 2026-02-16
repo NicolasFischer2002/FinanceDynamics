@@ -58,6 +58,8 @@ builder.Services.AddTransient<ITransactionReceiptRepository, TransactionReceiptR
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+builder.Services.AddSingleton<DateRangeState>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

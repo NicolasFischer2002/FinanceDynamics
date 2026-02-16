@@ -13,6 +13,7 @@
         public static readonly ExpenseCategory Transport = new("Transporte");
         public static readonly ExpenseCategory ClothingAndFootwear = new("Vestuário e Calçados");
         public static readonly ExpenseCategory SchoolSupplies = new ("Material Escolar");
+        public static readonly ExpenseCategory Streaming = new("Streaming"); 
         public static readonly ExpenseCategory Others = new("Outros");
 
         public ExpenseCategory(string name)

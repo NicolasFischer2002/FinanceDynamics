@@ -15,7 +15,7 @@ namespace FinanceDynamics.Domain.ValueObjects
 
         private void ValidateDescription(string description)
         {
-            const int maximumLength = 50;
+            const int maximumLength = 70;
 
             if (!string.IsNullOrWhiteSpace(description))
                 if (description.Length > maximumLength)

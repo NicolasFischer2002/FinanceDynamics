@@ -5,6 +5,8 @@ using FinanceDynamics.Domain.Entities;
 using FinanceDynamics.Infrastructure.Data;
 using FinanceDynamics.Infrastructure.Data.Mappers;
 using Microsoft.EntityFrameworkCore;
+using FinanceDynamics.Domain.Helpers;
+using FinanceDynamics.Domain.Enums;
 
 namespace FinanceDynamics.Infrastructure.Repositories
 {
@@ -39,6 +41,7 @@ namespace FinanceDynamics.Infrastructure.Repositories
         {
             IReadOnlyList<Data.Entities.Income> incomes = await _context.Incomes
                 .Where(i => i.DateTime >= dateRange.StartDate && i.DateTime <= dateRange.EndDate)
+                .OrderBy(i => i.DateTime)
                 .ToListAsync();
 
             return incomes.Select(i => new IncomeDTO(
@@ -47,7 +50,7 @@ namespace FinanceDynamics.Infrastructure.Repositories
                 (decimal)i.Value,
                 i.Category,
                 i.Subcategory is null ? string.Empty : i.Subcategory,
-                i.Method,
+                EnumHelper.GetDescriptionFromName<TransactionMethod>(i.Method),
                 i.DateTime,
                 i.Description is null ? string.Empty : i.Description
             )).ToList();

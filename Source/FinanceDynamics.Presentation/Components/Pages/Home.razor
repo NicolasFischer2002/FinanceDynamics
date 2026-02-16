@@ -5,6 +5,7 @@
 @using FinanceDynamics.Presentation.Components.MyComponents
 @using FinanceDynamics.Application.Interfaces
 @using FinanceDynamics.Application.Services
+@inject DateRangeState DateRangeState
 @inject IIncomeRepository IIncomeRepository
 @inject IExpenseRepository IExpenseRepository
 @inject IFinancialStatement IFinancialStatement
@@ -52,20 +53,18 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var today = DateTime.Today;
-        var startOfMonth = new DateTime(today.Year, today.Month, 1);
-        var endOfMonth = startOfMonth.AddMonths(1).AddDays(-1);
-
-        await LoadGraphicalInterface(startOfMonth, endOfMonth);
-    }
-
-    private async Task LoadGraphicalInterface(DateTime startDate, DateTime endDate)
-    {
-        var range = new FinanceDynamics.Application.ValueObjects.DateRange(
-            startDate,
-            endDate
+        _dateRange = new DateRange(DateRangeState.Current.StartDate, DateRangeState.Current.EndDate);
+        
+        var newRange = new FinanceDynamics.Application.ValueObjects.DateRange(
+            DateRangeState.Current.StartDate, 
+            DateRangeState.Current.EndDate
         );
 
+        await LoadGraphicalInterface(newRange);
+    }
+
+    private async Task LoadGraphicalInterface(FinanceDynamics.Application.ValueObjects.DateRange range)
+    {
         await LoadCharts(range);
 
         await LoadTotalIncome(range);
@@ -82,7 +81,10 @@
         if (_dateRange?.Start is null || _dateRange?.End is null)
             return;
 
-        await LoadGraphicalInterface(_dateRange.Start.Value, _dateRange.End.Value);
+        var newRange = new FinanceDynamics.Application.ValueObjects.DateRange(_dateRange.Start.Value, _dateRange.End.Value);
+        
+        DateRangeState.SetDateRange(newRange);
+        await LoadGraphicalInterface(newRange);
     }
 
     private async Task LoadCharts(FinanceDynamics.Application.ValueObjects.DateRange range)

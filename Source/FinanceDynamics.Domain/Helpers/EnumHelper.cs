@@ -52,5 +52,37 @@ namespace FinanceDynamics.Domain.Helpers
                 nameof(name)
             );
         }
+
+        public static string GetDescription<T>(T value)
+        where T : Enum
+        {
+            var type = typeof(T);
+            var name = value.ToString();
+
+            var field = type.GetField(name);
+            if (field == null)
+                return name;
+
+            var attribute = field.GetCustomAttribute<DescriptionAttribute>();
+
+            return attribute?.Description ?? name;
+        }
+
+        public static string GetDescriptionFromName<T>(string name, bool ignoreCase = true)
+        where T : struct, Enum
+        {
+            if (!Enum.TryParse<T>(name, ignoreCase, out var value))
+                throw new ArgumentException(
+                    $"Nome '{name}' não corresponde a nenhum valor do enum {typeof(T).Name}.",
+                    nameof(name));
+
+            var field = typeof(T).GetField(value.ToString());
+
+            return field?
+                .GetCustomAttribute<DescriptionAttribute>()?
+                .Description
+                ?? value.ToString();
+        }
+
     }
 }

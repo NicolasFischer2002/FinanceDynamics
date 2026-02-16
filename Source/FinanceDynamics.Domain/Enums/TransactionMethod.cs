@@ -23,6 +23,9 @@ namespace FinanceDynamics.Domain.Enums
         Boleto,
 
         [Description("Vale-refeição")]
-        MealVoucher
+        MealVoucher,
+
+        [Description("Descontado em folha")]
+        PayrollDeduction
     }
 }

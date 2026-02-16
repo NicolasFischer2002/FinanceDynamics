@@ -1,10 +1,12 @@
 ﻿@page "/ViewIncomes"
 @using FinanceDynamics.Application.DTOs
+@using FinanceDynamics.Application.Services
 @using FinanceDynamics.Domain.Enums
 @using FinanceDynamics.Presentation.Components.MyComponents
 @using FinanceDynamics.Domain.Entities
 @using FinanceDynamics.Application.Interfaces
 @using FinanceDynamics.Presentation.DTOs
+@inject DateRangeState DateRangeState
 @inject IIncomeRepository IIncomeRepository
 
 <PageTitle>Consultar receitas</PageTitle>
@@ -21,11 +23,13 @@
 
     protected override async Task OnInitializedAsync() 
     {
-        var today = DateTime.Today;
-        var startOfMonth = new DateTime(today.Year, today.Month, 1);
-        var endOfMonth = startOfMonth.AddMonths(1).AddDays(-1);
+        _dateRange = new DateRange(DateRangeState.Current.StartDate, DateRangeState.Current.EndDate);
 
-        var range = new FinanceDynamics.Application.ValueObjects.DateRange(startOfMonth, endOfMonth);
+        var range = new FinanceDynamics.Application.ValueObjects.DateRange(
+            (DateTime)_dateRange.Start!,
+            (DateTime)_dateRange.End!
+        );
+
         await FillInTransactionList(range);
     }
 
@@ -38,6 +42,7 @@
 
         var newRange = new FinanceDynamics.Application.ValueObjects.DateRange(_dateRange.Start.Value, _dateRange.End.Value);
 
+        DateRangeState.SetDateRange(newRange);
         await FillInTransactionList(newRange);
     }
 
