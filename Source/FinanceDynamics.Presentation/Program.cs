@@ -13,10 +13,29 @@ using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // EF Core
-var connectionString = builder.Configuration.GetConnectionString("Default");
+//var connectionString = builder.Configuration.GetConnectionString("Default");
+//    builder.Services.AddDbContext<FinanceDbContext>(options =>
+//    options.UseSqlite(connectionString));
+
+var dbFileName = "FinanceDynamics.db";
+var dbRelativeFolder = "Database";
+var dbPath = Path.Combine(AppContext.BaseDirectory, dbRelativeFolder, dbFileName);
+
+var configured = builder.Configuration.GetConnectionString("Default");
+
+if (!string.IsNullOrWhiteSpace(configured) && !configured.Contains("Data Source="))
+{
     builder.Services.AddDbContext<FinanceDbContext>(options =>
-    options.UseSqlite(connectionString));
+        options.UseSqlite(configured));
+}
+else
+{
+    var conn = $"Data Source={dbPath}";
+    builder.Services.AddDbContext<FinanceDbContext>(options =>
+        options.UseSqlite(conn));
+}
 
 // Add MudBlazor services
 builder.Services.AddMudServices(config =>

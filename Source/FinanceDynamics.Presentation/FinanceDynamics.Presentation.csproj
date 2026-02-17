@@ -21,4 +21,12 @@
     <ProjectReference Include="..\FinanceDynamics.Domain\FinanceDynamics.Domain.csproj" />
     <ProjectReference Include="..\FinanceDynamics.Infrastructure\FinanceDynamics.Infrastructure.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+  	<None Include="..\FinanceDynamics.Infrastructure\Database\FinanceDynamics.db">
+  		<Link>Database\FinanceDynamics.db</Link>
+  		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  		<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+  	</None>
+  </ItemGroup>
 </Project>
